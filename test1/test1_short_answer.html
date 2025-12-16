@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计算机组成原理 - 简答题精解</title>
+
+<style>
+    body { font-family: "Segoe UI", "Microsoft YaHei", sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; background-color: #f9f9f9; }
+    .container { background-color: #fff; padding: 40px; box-shadow: 0 0 10px rgba(0,0,0,0.1); border-radius: 8px; }
+    h1 { text-align: center; color: #2c3e50; border-bottom: 2px solid #2c3e50; padding-bottom: 10px; }
+    h2 { color: #2980b9; border-left: 5px solid #2980b9; padding-left: 10px; margin-top: 40px; background: #eaf2f8; padding: 10px; }
+    .question-block { margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px dashed #eee; }
+    .question-title { font-weight: bold; font-size: 1.1em; margin-bottom: 10px; }
+    .options { list-style-type: none; padding-left: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .answer-key { color: #e74c3c; font-weight: bold; margin-top: 10px; display: block; }
+    .analysis { background-color: #fffbf0; border: 1px solid #ffeeba; padding: 15px; margin-top: 10px; border-radius: 5px; color: #856404; }
+    .knowledge-box { background-color: #d4edda; border: 1px solid #c3e6cb; color: #155724; padding: 15px; margin-top: 30px; border-radius: 5px; }
+    .knowledge-box h3 { margin-top: 0; border-bottom: 1px solid #155724; padding-bottom: 5px; display: inline-block; }
+    .formula { font-style: italic; background: #eee; padding: 2px 5px; }
+    .binary-box { font-family: monospace; background: #eee; padding: 2px 5px; }
+    /* Table styles for analysis questions */
+    table { border-collapse: collapse; width: 100%; margin: 10px 0; }
+    th, td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+    th { background-color: #f2f2f2; }
+    /* Pipeline chart */
+    .pipeline-chart td, .pipeline-chart th { width: 20px; height: 20px; padding: 2px; font-size: 0.8em; }
+    .pipeline-chart .active { background-color: #3498db; color: white; }
+    .disk-address-box { display: flex; border: 1px solid #000; width: fit-content; margin: 10px 0; }
+    .disk-field { border-right: 1px solid #000; padding: 5px 15px; position: relative; text-align: center; }
+    .bit-label { position: absolute; top: -20px; font-size: 0.8em; color: #666; }
+    .bit-label.left { left: 0; }
+    .bit-label.right { right: 0; }
+</style>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <h1>计算机组成原理 - 简答题精解</h1>
+<h2>第一章：计算机系统概论</h2>
+<div class="question-block">
+<div class="question-title">2、计算机硬件有哪些部件，各部件的作用是什么？</div>
+<div class="answer-section"><p><strong>答：</strong>计算机的硬件系统由有形的电子器件等构成的，它包括运算器、存储器、控制器、输入输出设备及总线系统组成。</p>
+<ul>
+<li><strong>存储器（Memory）：</strong>是用来存放数据和程序的部件；</li>
+<li><strong>运算器：</strong>是对信息进行运算处理的部件，核心是ALU；</li>
+<li><strong>控制器：</strong>是整个计算机的控制核心。它的主要功能是读取指令、翻译指令代码、并向计算机各部分发出控制信号，以便执行指令；</li>
+<li><strong>输入设备：</strong>能将数据和程序变换成计算机内部所能识别和接受的信息方式，并顺序地把它们送入存储器中；</li>
+<li><strong>输出设备：</strong>将计算机处理的结果以人们能接受的或其它机器能接受的形式送出。</li>
+</ul></div>
+</div>
+<div class="question-block">
+<div class="question-title">4、什么是硬件、软件和固件？什么是软件和硬件的逻辑等价？在什么意义上软件和硬件是不等价的？</div>
+<div class="answer-section"><p><strong>答：</strong></p>
+<ul>
+<li><strong>计算机硬件（Hardware）：</strong>是指构成计算机的所有实体部件的集合，通常这些部件由电路（电子元件）、机械等物理部件组成。</li>
+<li><strong>计算机软件（Software）：</strong>是指能使计算机工作的程序和程序运行时所需要的数据，以及与这些程序和数据有关的文字说明和图表资料。</li>
+<li><strong>固件（Firmware）：</strong>是一种介于传统的软件和硬件之间的实体，功能上类似软件，但形态上又是硬件（通常存储在ROM中）。</li>
+</ul>
+<p><strong>软件和硬件的逻辑等价含义：</strong></p>
+<ol>
+<li>任何一个由软件所完成的操作也可以直接由硬件来实现（如硬件乘法器）；</li>
+<li>任何一条由硬件所执行的指令也能用软件来完成（如软件模拟浮点运算）。</li>
+</ol>
+<p><strong>不等价性：</strong>在物理实现、执行速度、成本和灵活性上，软件和硬件是不等价的。硬件通常速度快但成本高、不易修改；软件灵活、成本低但速度较慢。</p></div>
+</div>
+<div class="question-block">
+<div class="question-title">5、计算机系统按程序设计语言划分为哪几个层次？</div>
+<div class="answer-section"><p><strong>答：</strong>计算机系统通常划分为以下几个层次：</p>
+<ol>
+<li>微程序级（微指令）</li>
+<li>一般机器级（机器语言）</li>
+<li>操作系统级（系统调用）</li>
+<li>汇编语言级（汇编语言）</li>
+<li>高级语言级（C/C++, Java等）</li>
+</ol>
+<p>每一级上都能进行程序设计，且得到下级的支持。</p></div>
+</div>
+<div class="question-block">
+<div class="question-title">7、常用的计算机性能指标有哪些？</div>
+<div class="answer-section"><p><strong>答：</strong>主要性能指标包括：</p>
+<ul>
+<li><strong>主频 (Clock Rate)：</strong>决定了计算机的运行速度，单位MHz/GHz。</li>
+<li><strong>字长 (Word Size)：</strong>决定了计算机的运算精度、指令字长度、存储单元长度，常见为32位/64位。</li>
+<li><strong>运算速度 (MIPS/MFLOPS)：</strong>每秒执行的百万条指令数或浮点操作数。</li>
+<li><strong>存储容量：</strong>内存和外存的容量。</li>
+<li><strong>可靠性 (MTBF)：</strong>平均无故障时间。</li>
+<li><strong>吞吐量 (Throughput)：</strong>单位时间内处理的信息量。</li>
+<li><strong>响应时间 (Response Time)：</strong>从提交请求到获得结果的时间。</li>
+</ul></div>
+</div>
+<div class="question-block">
+<div class="question-title">8、多媒体的含义是什么？</div>
+<div class="answer-section"><p><strong>答：</strong>多媒体技术是指能够同时获取、处理、编辑、存储和展示两个以上不同信息类型媒体（如文字、声音、图形、图像、动画、视频）的技术。它强调交互性和集成性。</p></div>
+</div>
+<div class="question-block">
+<div class="question-title">9、简单描述计算机的层次结构，说明各层次的主要特点。</div>
+<div class="answer-section"><p><strong>答：</strong></p>
+<ul>
+<li><strong>第0级：硬件逻辑级</strong> - 由门电路、触发器等构成。</li>
+<li><strong>第1级：微程序级</strong> - 机器语言指令解释为微指令序列，直接由硬件执行。</li>
+<li><strong>第2级：传统机器级</strong> - 程序员可见的机器指令集（ISA）。</li>
+<li><strong>第3级：操作系统级</strong> - 提供文件管理、资源调度等服务，扩展了机器功能。</li>
+<li><strong>第4级：汇编语言级</strong> - 符号化的机器语言。</li>
+<li><strong>第5级：高级语言级</strong> - 面向算法和应用，独立于机器硬件。</li>
+</ul></div>
+</div>
+<div class="question-block">
+<div class="question-title">10、计算机系统的主要技术指标有哪些？</div>
+<div class="answer-section"><p><strong>答：</strong>(参见题7，此为类似题)</p>
+<ul>
+<li><strong>机器字长：</strong>参与运算的数的基本位数。</li>
+<li><strong>数据通路宽度：</strong>数据总线一次并行传送信息的位数。</li>
+<li><strong>主存储器容量：</strong>存储空间大小。</li>
+<li><strong>运算速度：</strong>与主频、CPI（每条指令周期数）等有关。</li>
+</ul></div>
+</div>
+<div class="question-block">
+<div class="question-title">21、如何区别存储器和寄存器？两者是一回事的说法对吗？</div>
+<div class="answer-section"><p><strong>答：</strong>不是一回事。</p>
+<ul>
+<li><strong>位置：</strong>寄存器位于CPU内部；存储器（主存）位于CPU外部。</li>
+<li><strong>速度：</strong>寄存器速度极快（与CPU同频）；存储器速度较慢。</li>
+<li><strong>容量：</strong>寄存器数量少，容量极小；存储器容量大。</li>
+<li><strong>功能：</strong>寄存器用于暂存指令执行过程中的操作数和中间结果；存储器存放完整的程序和数据。</li>
+</ul></div>
+</div>
+<div class="question-block">
+<div class="question-title">28、指令长度和机器字长有什么关系？半字长指令、单字长指令、双字长指令分别表示什么？</div>
+<div class="answer-section"><p><strong>答：</strong>
+                指令长度与机器字长没有固定关系。它可以等于、小于或大于机器字长。
+            </p>
+<ul>
+<li><strong>单字长指令：</strong>指令长度 = 机器字长。读取一次内存即可获得完整指令。</li>
+<li><strong>半字长指令：</strong>指令长度 = 1/2 机器字长。读取一次内存可能获得两条指令。</li>
+<li><strong>双字长指令：</strong>指令长度 = 2倍 机器字长。需要读取两次内存才能获得完整指令。</li>
+</ul></div>
+</div>
+<div class="question-block">
+<div class="question-title">38、什么叫总线周期、时钟周期、指令周期？它们之间一般有什么关系？</div>
+<div class="answer-section"><p><strong>答：</strong></p>
+<ul>
+<li><strong>时钟周期 (Clock Cycle)：</strong>计算机主频的倒数，最基本的时间单位。</li>
+<li><strong>总线周期 (Bus Cycle)：</strong>CPU通过总线对存储器或I/O进行一次访问所需的时间。</li>
+<li><strong>指令周期 (Instruction Cycle)：</strong>取出并执行一条指令所需的全部时间。</li>
+</ul>
+<p><strong>关系：</strong> 时钟周期 < 总线周期 < 指令周期。<br>
+通常一个总线周期包含若干个时钟周期（如4个）。一个指令周期包含若干个机器周期（其中可能包含取指总线周期、执行总线周期等）。</p></div>
+</div>
+<div class="question-block">
+<div class="question-title">39、说明总线结构对计算机系统性能的影响。</div>
+<div class="answer-section"><p><strong>答：</strong></p>
+<ol>
+<li><strong>带宽限制：</strong>总线是共享资源，其带宽决定了部件间数据交换的最大速率，可能成为系统瓶颈（冯·诺依曼瓶颈）。</li>
+<li><strong>并发性：</strong>单总线结构不支持并发传送；多总线结构（如CPU-Mem总线和I/O总线分离）允许CPU处理和I/O传输并行进行，提高系统效率。</li>
+<li><strong>扩展性：</strong>总线标准决定了系统扩展外设的容易程度。</li>
+</ol></div>
+</div>
+<div class="question-block">
+<div class="question-title">45、什么是中断？中断技术给计算机系统带来了什么作用？</div>
+<div class="answer-section"><p><strong>答：</strong> <strong>中断</strong>是指当计算机执行正常程序时，系统中出现某些异常情况或特殊请求（中断源），CPU 暂停正在执行的程序，保存现场，转去处理所发生的事件（中断服务程序）；处理完毕后，自动返回到原来被中断了的程序继续运行。</p>
+<p><strong>作用：</strong></p>
+<ul>
+<li>实现主机与外部设备的<strong>并行工作</strong>（I/O中断）。</li>
+<li>处理硬件故障和异常（如掉电、算术溢出）。</li>
+<li>实现人机交互。</li>
+<li>实现多道程序分时操作（时钟中断）。</li>
+</ul></div>
+</div>
+<div class="question-block">
+<div class="question-title">46、中断系统为什么要进行中断判优？何时进行中断判优？如何进行判优？</div>
+<div class="answer-section"><p><strong>答：</strong></p>
+<ul>
+<li><strong>原因：</strong>当多个中断源同时提出请求时，CPU一次只能响应一个，必须根据轻重缓急决定响应顺序。</li>
+<li><strong>时机：</strong>中断判优通常发生在CPU中断查询阶段（指令执行结束前）。</li>
+<li><strong>方法：</strong>
+<ul>
+<li><strong>硬件判优：</strong>排队电路（链式查询、中断控制器）。速度快。</li>
+<li><strong>软件判优：</strong>查询程序按优先级顺序查询。灵活性高但速度慢。</li>
+</ul>
+</li>
+</ul></div>
+</div>
+<div class="knowledge-box">
+<h3>本章核心考点</h3>
+<ul>
+<li>冯·诺依曼机特点：存储程序、顺序执行、二进制。</li>
+<li>计算机系统层次：硬件 -> 微程序 -> 机器语言 -> 操作系统 -> 汇编 -> 高级语言。</li>
+<li>性能指标：主频、字长、CPI、MIPS、带宽、响应时间。</li>
+<li>硬件五大部件：运算器、控制器、存储器、输入、输出。</li>
+</ul>
+</div>
+<h2>第二章：数据的表示和运算</h2>
+<div class="question-block">
+<div class="question-title">6、解释如下概念：ALU, CPU, 主机和字长。</div>
+<div class="answer-section"><p><strong>答：</strong></p>
+<ul>
+<li><strong>ALU (Arithmetic Logic Unit)：</strong>算术逻辑单元，负责执行加减乘除、与或非等运算。</li>
+<li><strong>CPU (Central Processing Unit)：</strong>中央处理器，核心部件，包括ALU、控制器（CU）和寄存器组。</li>
+<li><strong>主机：</strong>计算机硬件的核心部分，由CPU和主存储器（Memory）组成。</li>
+<li><strong>字长：</strong>CPU内部数据通路一次能并行处理的二进制位数，标志着计算机的精度和处理能力。</li>
+</ul></div>
+</div>
+<div class="question-block">
+<div class="question-title">12、海明校验码的编码规则有哪些？</div>
+<div class="answer-section"><p><strong>答：</strong>海明码（Hamming Code）是一种多重奇偶校验码，具有纠错能力。</p>
+<ol>
+<li><strong>校验位位置：</strong>校验位 $P_i$ 位于 $2^{i-1}$ 的位置（即第1, 2, 4, 8...位）。</li>
+<li><strong>位数关系：</strong>若有 $k$ 个数据位，$r$ 个校验位，需满足 $2^r \ge k + r + 1$。</li>
+<li><strong>校验分组：</strong>第 $i$ 组包含所有二进制位置号中第 $i$ 位为1的位。$P_i$ 负责校验该组的奇偶性。</li>
+</ol></div>
+</div>
+<div class="question-block">
+<div class="question-title">13、简述 CRC 码的纠错原理。</div>
+<div class="answer-section"><p><strong>答：</strong>CRC（循环冗余校验）基于模2除法。</p>
+<ul>
+<li><strong>发送端：</strong>将数据左移，除以生成多项式 $G(x)$，将得到的余数（FCS）拼接到数据后发送。</li>
+<li><strong>接收端：</strong>将接收到的数据除以同样的 $G(x)$。
+<ul>
+<li>若余数为0，说明无错。</li>
+<li>若余数不为0，说明有错。不同的余数对应不同的出错位（在单位错假设下），可通过查表或计算确定出错位置并纠正。</li>
+</ul>
+</li>
+</ul></div>
+</div>
+<div class="question-block">
+<div class="question-title">14、运算器由哪几部分组成？</div>
+<div class="answer-section"><p><strong>答：</strong></p>
+<ol>
+<li><strong>ALU：</strong>算术逻辑运算单元（核心）。</li>
+<li><strong>通用寄存器组（GPRs）：</strong>如AX, BX等，存放操作数和中间结果。</li>
+<li><strong>暂存寄存器：</strong>锁存输入数据。</li>
+<li><strong>累加器（ACC）：</strong>特殊的寄存器。</li>
+<li><strong>程序状态字寄存器（PSW）：</strong>存放运算标志（溢出、进位、零等）。</li>
+<li><strong>内部总线：</strong>连接各部件。</li>
+</ol></div>
+</div>
+<div class="knowledge-box">
+<h3>本章核心考点</h3>
+<ul>
+<li>原码/反码/补码/移码定义及转换。</li>
+<li>补码运算：将减法变加法，符号位参与运算。</li>
+<li>定点数 vs 浮点数：范围与精度的权衡。</li>
+<li>校验码：奇偶校验、海明码（纠错）、CRC（检错）。</li>
+<li>溢出判断：双符号位法、进位判别法。</li>
+</ul>
+</div>
+<h2>第三章：存储器系统</h2>
+<div class="question-block">
+<div class="question-title">15、主存储器有哪些性能指标？它们的含义是什么？</div>
+<div class="answer-section"><p><strong>答：</strong></p>
+<ol>
+<li><strong>存储容量：</strong>存储单元数 × 字长。</li>
+<li><strong>存取时间 (Access Time, $T_A$)：</strong>启动读/写到操作完成的时间。</li>
+<li><strong>存取周期 (Memory Cycle Time, $T_{MC}$)：</strong>连续两次独立访问所需的最小间隔时间。通常 $T_{MC} > T_A$。</li>
+<li><strong>存储带宽 (Bandwidth)：</strong>单位时间内存储器存取的信息量（例如 B/s）。</li>
+</ol></div>
+</div>
+<div class="question-block">
+<div class="question-title">16、主存的基本组成有哪些部分？各部分主要的功能是什么？</div>
+<div class="answer-section"><p><strong>答：</strong></p>
+<ul>
+<li><strong>存储体：</strong>由存储元阵列组成，实际存放二进制信息。</li>
+<li><strong>MAR (Memory Address Register)：</strong>地址寄存器，锁存要访问的单元地址。</li>
+<li><strong>MDR (Memory Data Register)：</strong>数据寄存器，暂存读出或写入的数据。</li>
+<li><strong>地址译码器：</strong>将MAR中的地址转换为选通信号，选中特定单元。</li>
+<li><strong>读写控制电路：</strong>接收读/写命令，控制时序。</li>
+</ul></div>
+</div>
+<div class="question-block">
+<div class="question-title">17、静态 MOS 存储元、动态 MOS 存储元各有什么特点？</div>
+<div class="answer-section"><p><strong>答：</strong></p>
+<ul>
+<li><strong>SRAM (静态)：</strong>利用双稳态触发器存储信息。速度快，不需要刷新，但集成度低，功耗大，成本高。常用作Cache。</li>
+<li><strong>DRAM (动态)：</strong>利用电容电荷存储信息。集成度高，成本低，功耗小，但速度较慢，且需要定时刷新（因为电容漏电）。常用作主存。</li>
+</ul></div>
+</div>
+<div class="question-block">
+<div class="question-title">18、什么是刷新？为什么要刷新？有哪几种常用的刷新方式？</div>
+<div class="answer-section"><p><strong>答：</strong></p>
+<ul>
+<li><strong>定义：</strong>对DRAM的存储单元进行读出并恢复电荷的操作。</li>
+<li><strong>原因：</strong>DRAM依靠电容存储电荷，电荷会随时间泄漏，若不及时补充（刷新），信息将丢失。</li>
+<li><strong>方式：</strong>
+<ol>
+<li><strong>集中刷新：</strong>在规定的刷新周期内，安排一段时间集中刷新所有行，此时停止读写（死区）。</li>
+<li><strong>分散刷新：</strong>将存取周期延长，前一半读写，后一半刷新。无死区，但存取周期变长。</li>
+<li><strong>异步刷新：</strong>将刷新操作分散在整个刷新周期内进行。效率高，死区短。</li>
+</ol>
+</li>
+</ul></div>
+</div>
+<div class="question-block">
+<div class="question-title">19、简要说明提高存储器速度有哪些措施？</div>
+<div class="answer-section"><p><strong>答：</strong></p>
+<ol>
+<li><strong>采用更高速的器件：</strong>如DDR SDRAM。</li>
+<li><strong>Cache技术：</strong>利用SRAM作为高速缓冲。</li>
+<li><strong>多体交叉存储 (Interleaved Memory)：</strong>并行访问多个存储模块，提高带宽。</li>
+<li><strong>双端口存储器：</strong>允许两路同时访问。</li>
+</ol></div>
+</div>
+<div class="question-block">
+<div class="question-title">20、Cache 有哪些特点？</div>
+<div class="answer-section"><p><strong>答：</strong></p>
+<ul>
+<li><strong>速度：</strong>比主存快5-10倍，接近CPU速度。</li>
+<li><strong>容量：</strong>比主存小得多。</li>
+<li><strong>内容：</strong>存放主存中最活跃的数据副本（局部性原理）。</li>
+<li><strong>透明性：</strong>对程序员透明，由硬件自动管理。</li>
+</ul></div>
+</div>
+<div class="question-block">
+<div class="question-title">22、存储器的主要功能是什么？为什么要把存储系统分成若干个不同层次？主要有哪些层次？</div>
+<div class="answer-section"><p><strong>答：</strong></p>
+<ul>
+<li><strong>功能：</strong>存储程序和数据。</li>
+<li><strong>分层原因：</strong>为了解决容量、速度和价格之间的矛盾（没有一种存储器能同时满足容量大、速度快、价格低）。</li>
+<li><strong>层次：</strong>
+<ul>
+<li><strong>Cache-主存层：</strong>解决速度匹配问题（对程序员透明）。</li>
+<li><strong>主存-辅存层（虚拟存储器）：</strong>解决容量问题。</li>
+</ul>
+</li>
+</ul></div>
+</div>
+<div class="question-block">
+<div class="question-title">23、说明存储周期和存取时间的区别。</div>
+<div class="answer-section"><p><strong>答：</strong></p>
+<ul>
+<li><strong>存取时间 ($T_A$)：</strong>从发出读命令到数据稳定出现在输出端的时间。</li>
+<li><strong>存取周期 ($T_{MC}$)：</strong>存储器进行一次完整的读写操作后，内部电路恢复原状并准备好下一次请求所需的总时间。</li>
+<li><strong>关系：</strong>$T_{MC} > T_A$。</li>
+</ul></div>
+</div>
+<div class="question-block">
+<div class="question-title">34、指令和数据都存放在主存，如何识别从主存储器中取出的是指令还是数据？</div>
+<div class="answer-section"><p><strong>答：</strong></p>
+<ol>
+<li><strong>时间维度：</strong>在取指周期（Fetch Cycle）取出的是指令；在执行周期（Execution Cycle）取出的是数据。</li>
+<li><strong>来源维度：</strong>指令地址来源于PC（程序计数器）；数据地址来源于指令中的地址码或运算结果。</li>
+</ol></div>
+</div>
+<div class="question-block">
+<div class="question-title">48、磁表面存储器的特点有哪些？</div>
+<div class="answer-section"><p><strong>答：</strong></p>
+<ul>
+<li><strong>优点：</strong>存储密度高、容量大、单位成本低、非易失性（断电不丢失）、可脱机保存。</li>
+<li><strong>缺点：</strong>存取速度慢（毫秒级）、结构复杂（机械）、对环境要求高（防尘防震）。</li>
+</ul></div>
+</div>
+<div class="knowledge-box">
+<h3>本章核心考点</h3>
+<ul>
+<li>存储层次：Cache - 主存 - 辅存。</li>
+<li>SRAM vs DRAM：速度、刷新、集成度。</li>
+<li>存储扩展：位扩展（数据线）、字扩展（地址线）。</li>
+<li>Cache原理：局部性原理，映射方式（直接、全相联、组相联）。</li>
+<li>存储器性能：存取时间 vs 存取周期。</li>
+</ul>
+</div>
+<h2>第四章：指令系统</h2>
+<div class="question-block">
+<div class="question-title">1、冯·诺依曼型计算机的基本特点是什么？</div>
+<div class="answer-section"><p><strong>答：</strong></p>
+<ol>
+<li><strong>存储程序：</strong>程序和数据以二进制形式同等地位存放在存储器中。</li>
+<li><strong>顺序执行：</strong>CPU自动从内存取出指令并执行，默认按顺序递增PC。</li>
+<li><strong>五大部件：</strong>运算器、控制器、存储器、输入设备、输出设备。</li>
+<li><strong>以运算器为中心</strong>（现代通常以存储器为中心）。</li>
+</ol></div>
+</div>
+<div class="question-block">
+<div class="question-title">24、指令格式设计的准则有哪些？</div>
+<div class="answer-section"><p><strong>答：</strong></p>
+<ul>
+<li><strong>短：</strong>尽量缩短指令长度，节省存储空间和取指时间。</li>
+<li><strong>多：</strong>要有足够的指令类型和操作码位数。</li>
+<li><strong>整：</strong>指令长度应是机器字长的整数倍，便于读取。</li>
+<li><strong>活：</strong>寻址方式丰富灵活。</li>
+</ul></div>
+</div>
+<div class="question-block">
+<div class="question-title">25、指令是灵活多变的，体现在哪些方面？</div>
+<div class="answer-section"><p><strong>答：</strong></p>
+<ul>
+<li><strong>操作码可变：</strong>如扩展操作码技术。</li>
+<li><strong>指令长度可变：</strong>单字长、双字长等。</li>
+<li><strong>寻址方式多样：</strong>立即、直接、间接、变址、相对等。</li>
+<li><strong>地址码个数可变：</strong>零地址、一地址、二地址等。</li>
+</ul></div>
+</div>
+<div class="question-block">
+<div class="question-title">26、试比较基址寻址和变址寻址的异同。</div>
+<div class="answer-section"><p><strong>答：</strong></p>
+<ul>
+<li><strong>相似点：</strong>形式上都是 $EA = (R) + A$。</li>
+<li><strong>不同点：</strong>
+<ul>
+<li><strong>基址寻址：</strong>基址寄存器内容由OS管理（固定），形式地址A可变。用于程序重定位。</li>
+<li><strong>变址寻址：</strong>形式地址A固定（基准），变址寄存器内容由用户改变。用于数组处理、循环操作。</li>
+</ul>
+</li>
+</ul></div>
+</div>
+<div class="question-block">
+<div class="question-title">27、堆栈是什么？它有什么特点？功能有哪些？</div>
+<div class="answer-section"><p><strong>答：</strong></p>
+<ul>
+<li><strong>定义：</strong>一组顺序的存储单元，按“先进后出”（LIFO）原则存取。</li>
+<li><strong>特点：</strong>只能在栈顶（Top）进行插入（Push）和删除（Pop）。栈顶由栈指针（SP）指示。</li>
+<li><strong>功能：</strong>
+<ul>
+<li>支持零地址指令。</li>
+<li>保存子程序调用/中断的返回地址和现场。</li>
+<li>参数传递。</li>
+</ul>
+</li>
+</ul></div>
+</div>
+<div class="question-block">
+<div class="question-title">29、计算机进行程序控制工作的基本原理是怎样的？</div>
+<div class="answer-section"><p><strong>答：</strong>即“取指-执行”循环。</p>
+<ol>
+<li><strong>取指令：</strong>PC -> MAR -> Mem -> MDR -> IR。</li>
+<li><strong>分析指令：</strong>指令译码，形成有效地址。</li>
+<li><strong>执行指令：</strong>发出控制信号，完成操作。</li>
+<li><strong>下条指令：</strong>PC + 1，重复上述步骤。</li>
+</ol></div>
+</div>
+<div class="question-block">
+<div class="question-title">31、微程序控制的基本思想是什么？</div>
+<div class="answer-section"><p><strong>答：</strong>仿照程序设计的思想。将机器指令分解为微操作序列，每个微操作由微指令控制。一组微指令构成微程序。将微程序存放在控制存储器（CM）中。执行机器指令时，就是执行对应的微程序。</p></div>
+</div>
+<div class="question-block">
+<div class="question-title">32、说明微指令和机器指令的区别？</div>
+<div class="answer-section"><p><strong>答：</strong></p>
+<ul>
+<li><strong>机器指令：</strong>硬件和软件的接口，由操作码和地址码组成，功能较复杂。</li>
+<li><strong>微指令：</strong>硬件层面的控制命令，由微命令和下地址组成，功能简单（如寄存器传送）。</li>
+<li><strong>关系：</strong>一条机器指令对应一段微程序（多条微指令）。</li>
+</ul></div>
+</div>
+<div class="knowledge-box">
+<h3>本章核心考点</h3>
+<ul>
+<li>指令格式：操作码 + 地址码。</li>
+<li>寻址方式：立即、寄存器、直接、间接、基址（OS用）、变址（循环用）、相对（跳转用）。</li>
+<li>CISC vs RISC：复杂 vs 精简。</li>
+<li>堆栈操作：先进后出，支持子程序嵌套。</li>
+</ul>
+</div>
+<h2>第五章：中央处理器</h2>
+<div class="question-block">
+<div class="question-title">30、控制器的基本功能是什么？基本组成部件包括哪些？</div>
+<div class="answer-section"><p><strong>答：</strong></p>
+<ul>
+<li><strong>功能：</strong>取指令、分析指令、执行指令、控制程序流向、处理异常。</li>
+<li><strong>组成：</strong>
+<ul>
+<li><strong>PC：</strong>程序计数器。</li>
+<li><strong>IR：</strong>指令寄存器。</li>
+<li><strong>ID：</strong>指令译码器。</li>
+<li><strong>CU：</strong>控制单元（时序发生器、微操作信号发生器）。</li>
+</ul>
+</li>
+</ul></div>
+</div>
+<div class="question-block">
+<div class="question-title">33、控制器有哪些几种控制方式？各自有什么特点？</div>
+<div class="answer-section"><p><strong>答：</strong></p>
+<ol>
+<li><strong>同步控制：</strong>统一时钟，步调一致。电路简单，但速度受限于最慢的操作。</li>
+<li><strong>异步控制：</strong>应答方式（握手）。无统一时钟，速度快，适应性强，但电路复杂。</li>
+<li><strong>联合控制：</strong>大部分同步，小部分异步（如存储器读写）。</li>
+</ol></div>
+</div>
+<div class="question-block">
+<div class="question-title">35、什么是微指令和微操作？微程序和机器指令有何关系？微程序和程序之间有何关系？</div>
+<div class="answer-section"><p><strong>答：</strong>(参见题31/32)</p>
+<ul>
+<li><strong>微操作：</strong>计算机中最基本的原子操作（如 A->B）。</li>
+<li><strong>微指令：</strong>控制一组微操作的命令字。</li>
+<li><strong>微程序 vs 程序：</strong>
+<ul>
+<li>微程序位于控制存储器（固件），解释机器指令，用户不可见。</li>
+<li>程序位于主存（软件），由机器指令组成，用户编写。</li>
+</ul>
+</li>
+</ul></div>
+</div>
+<div class="question-block">
+<div class="question-title">36、比较水平微指令和垂直微指令的优缺点。</div>
+<div class="answer-section"><p><strong>答：</strong></p>
+<ul>
+<li><strong>水平型：</strong>字长长，并行能力强，执行速度快，编写困难（由于太底层）。</li>
+<li><strong>垂直型：</strong>字长短，类似机器指令，编写容易，但并行能力差，速度慢。</li>
+</ul></div>
+</div>
+<div class="knowledge-box">
+<h3>本章核心考点</h3>
+<ul>
+<li>CPU功能：指令控制、操作控制、时间控制、数据加工。</li>
+<li>控制方式：同步、异步。</li>
+<li>微程序控制：微指令解释机器指令，存储在CM中。</li>
+<li>流水线技术：提高吞吐率，需解决相关性（数据、结构、控制冲突）。</li>
+</ul>
+</div>
+<h2>第六章：总线系统</h2>
+<div class="question-block">
+<div class="question-title">3、什么是总线？以总线组成计算机有哪些组成结构？</div>
+<div class="answer-section"><p><strong>答：</strong></p>
+<ul>
+<li><strong>定义：</strong>连接多个部件的信息传输线，是共享的公共通道。</li>
+<li><strong>结构：</strong>
+<ul>
+<li><strong>单总线：</strong>CPU、内存、I/O挂在同一条总线上。</li>
+<li><strong>双总线：</strong>CPU-内存总线 + I/O总线。</li>
+<li><strong>多总线：</strong>增加DMA总线、PCI总线等。</li>
+</ul>
+</li>
+</ul></div>
+</div>
+<div class="knowledge-box">
+<h3>本章核心考点</h3>
+<ul>
+<li>总线分类：片内、系统、I/O。</li>
+<li>总线仲裁：集中式（链式、计数器、独立请求） vs 分布式。</li>
+<li>总线带宽计算：频率 × 宽度 / 8。</li>
+<li>总线操作阶段：申请、寻址、传输、结束。</li>
+</ul>
+</div>
+<h2>第七章：输入输出系统</h2>
+<div class="question-block">
+<div class="question-title">37、比较单总线、双总线和多总线结构的性能特点。</div>
+<div class="answer-section"><p><strong>答：</strong></p>
+<ul>
+<li><strong>单总线：</strong>结构简单，成本低，但带宽争用严重，不支持并行。</li>
+<li><strong>双总线：</strong>分离了存储器流量和I/O流量，提高了效率。</li>
+<li><strong>多总线：</strong>针对不同速度设备使用不同总线（如高速PCIe，低速USB），效率最高，结构最复杂。</li>
+</ul></div>
+</div>
+<div class="question-block">
+<div class="question-title">40、接口电路在系统结构中的作用是什么？</div>
+<div class="answer-section"><p><strong>答：</strong>接口（Interface）是主机和外设之间的桥梁。</p>
+<ul>
+<li><strong>作用：</strong>
+<ul>
+<li>数据缓冲（解决速度差异）。</li>
+<li>信号转换（数字/模拟，电平转换）。</li>
+<li>地址译码（设备选择）。</li>
+<li>状态/控制信息传递。</li>
+</ul>
+</li>
+</ul></div>
+</div>
+<div class="question-block">
+<div class="question-title">41、接口电路应具备哪些基本功能？</div>
+<div class="answer-section"><p><strong>答：</strong>(同上) 选址、缓冲、控制、状态反馈、数据转换。</p></div>
+</div>
+<div class="question-block">
+<div class="question-title">42、外部设备在系统中如何编址，如何与主机连接？</div>
+<div class="answer-section"><p><strong>答：</strong></p>
+<ul>
+<li><strong>编址方式：</strong>
+<ol>
+<li><strong>统一编址（存储器映射）：</strong>I/O端口占用内存地址空间。指令统一。</li>
+<li><strong>独立编址（I/O映射）：</strong>I/O端口有独立地址空间。需专用指令（IN/OUT）。</li>
+</ol>
+</li>
+<li><strong>连接方式：</strong>通过接口电路连接到总线。</li>
+</ul></div>
+</div>
+<div class="question-block">
+<div class="question-title">43、什么是 I/O 组织方式？有哪些几种 I/O 组织方式？各自的特点是什么？</div>
+<div class="answer-section"><p><strong>答：</strong></p>
+<ol>
+<li><strong>程序查询：</strong>CPU忙等查询状态，效率低，硬件简单。</li>
+<li><strong>程序中断：</strong>CPU可与外设并行，适用于中低速设备。</li>
+<li><strong>DMA (直接存储器访问)：</strong>硬件控制内存和外设直接交换，CPU仅在开始和结束参与。适合高速块传输。</li>
+<li><strong>通道 (Channel)：</strong>专用I/O处理器，执行通道程序。</li>
+</ol></div>
+</div>
+<div class="question-block">
+<div class="question-title">44、查询方式和中断方式的主要异同点是什么？</div>
+<div class="answer-section"><p><strong>答：</strong></p>
+<ul>
+<li><strong>相同：</strong>都需要CPU执行指令来传送数据（中断方式下是服务程序）。</li>
+<li><strong>不同：</strong>
+<ul>
+<li>查询：CPU被动等待，串行工作。</li>
+<li>中断：CPU主动，并行工作，效率高。</li>
+</ul>
+</li>
+</ul></div>
+</div>
+<div class="question-block">
+<div class="question-title">47、外部设备有哪些主要功能？可以分为哪些大类？各中有哪些典型设备？</div>
+<div class="answer-section"><p><strong>答：</strong></p>
+<ul>
+<li><strong>人机交互：</strong>键盘、鼠标、显示器。</li>
+<li><strong>存储：</strong>磁盘、光盘。</li>
+<li><strong>机机通信：</strong>网卡、调制解调器。</li>
+</ul></div>
+</div>
+<div class="knowledge-box">
+<h3>本章核心考点</h3>
+<ul>
+<li>I/O控制方式：程序查询（串行）、中断（并行）、DMA（高速块传输）、通道。</li>
+<li>中断过程：请求 -> 响应（中断隐指令）-> 服务 -> 返回。</li>
+<li>DMA特点：窃取总线周期，CPU仅干预开始结束。</li>
+<li>接口功能：缓冲、转换、控制、状态。</li>
+</ul>
+</div>
+<h2>其他 / 综合</h2>
+<div class="question-block">
+<div class="question-title">11、试计算采用 32×32 点阵字形的一个汉字字形占多少字节？存储 6763 个 16×16 点阵以及 24×24
+                    点阵字形的汉字库各需要多少存储容量？</div>
+<div class="answer-section"><p><strong>答：</strong></p>
+<ul>
+<li>32x32点阵：(32*32)/8 = 1024/8 = 128 字节。</li>
+<li>16x16汉字库：6763 * (16*16/8) = 6763 * 32 = 216,416 字节。</li>
+<li>24x24汉字库：6763 * (24*24/8) = 6763 * 72 = 486,936 字节。</li>
+</ul></div>
+</div>
+
+    </div>
+</body>
+</html>

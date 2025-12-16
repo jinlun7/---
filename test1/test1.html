@@ -1,0 +1,2060 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计算机组成原理期末考试试题及答案</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .paper-container {
+            background-color: #fff;
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #2980b9;
+            border-left: 5px solid #2980b9;
+            padding-left: 10px;
+            margin-top: 30px;
+        }
+
+        .question-block {
+            margin-bottom: 20px;
+            border-bottom: 1px dashed #eee;
+            padding-bottom: 10px;
+        }
+
+        .question-title {
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .options {
+            list-style-type: none;
+            padding-left: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5px;
+        }
+
+        .options li {
+            margin-bottom: 5px;
+        }
+
+        .answer-key {
+            color: #e74c3c;
+            font-weight: bold;
+            font-size: 0.9em;
+            margin-left: 10px;
+        }
+
+        .answer-section {
+            background-color: #f0f8ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 15px 0;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        code {
+            background-color: #eee;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+
+        .diagram-placeholder {
+            border: 2px dashed #ccc;
+            padding: 20px;
+            text-align: center;
+            color: #777;
+            margin: 10px 0;
+            background: #fafafa;
+        }
+
+        .citation {
+            font-size: 0.8em;
+            color: #999;
+            vertical-align: super;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="paper-container">
+        [cite_start]<h1>计算机组成原理期末考试试题及答案 [cite: 1]</h1>
+
+        <h2>一、选择题</h2>
+        <p><em>注：根据原文整理，部分题目后直接附带了答案（如：B）。</em></p>
+
+        <div class="question-block">
+            <div class="question-title">1. [cite_start]完整的计算机系统应包括 [cite: 3]</div>
+            <ul class="options">
+                <li>A. [cite_start]运算器、存储器和控制器 [cite: 4]</li>
+                <li>B. [cite_start]外部设备和主机 [cite: 10]</li>
+                <li>C. [cite_start]主机和实用程序 [cite: 5]</li>
+                <li>D. [cite_start]配套的硬件设备和软件系统 [cite: 11]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：D [cite: 12]</span>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">2. [cite_start]计算机系统中的存储器系统是指 [cite: 6]</div>
+            <ul class="options">
+                <li>A. [cite_start]RAM 存储器 [cite: 7]</li>
+                <li>B. [cite_start]ROM 存储器 [cite: 13]</li>
+                <li>C. [cite_start]主存储器 [cite: 8]</li>
+                <li>D. [cite_start]主存储器和外存储器 [cite: 14]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：D [cite: 9]</span>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">3. [cite_start]冯·诺依曼机工作方式的基本特点是 [cite: 15]</div>
+            <ul class="options">
+                <li>A. [cite_start]多指令流单数据流 [cite: 16]</li>
+                <li>B. [cite_start]按地址访问并顺序执行指令 [cite: 20]</li>
+                <li>C. [cite_start]堆栈操作 [cite: 17]</li>
+                <li>D. [cite_start]存储器按内部选择地址 [cite: 21]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：B [cite: 15]</span>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">4. [cite_start]下列说法中不正确的是 [cite: 18]</div>
+            <ul class="options">
+                <li>A. [cite_start]任何可以由软件实现的操作也可以由硬件来实现 [cite: 22]</li>
+                <li>B. [cite_start]固件就功能而言类似于软件,而从形态来说又类似于硬件 [cite: 23]</li>
+                <li>C. [cite_start]在计算机系统的层次结构中,微程序级属于硬件级,其他四级都是软件级 [cite: 24]</li>
+                <li>D. [cite_start]面向高级语言的机器是完全可以实现的 [cite: 25]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：D [cite: 19]</span> (注：原文此处标记可能存在歧义，通常C也被认为是值得商榷的描述，但根据文档标记选D)
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">5. [cite_start]在下列数中最小的数为 [cite: 26]</div>
+            <ul class="options">
+                <li>A. [cite_start]\((101001)_2\) [cite: 27]</li>
+                <li>B. [cite_start]\((52)_8\) [cite: 30]</li>
+                <li>C. [cite_start]\((101001)_{BCD}\) [cite: 31]</li>
+                <li>D. [cite_start]\((233)_{16}\) [cite: 32]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：C [cite: 29]</span>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">6. [cite_start]在下列数中最大的数为 [cite: 28]</div>
+            <ul class="options">
+                <li>A. [cite_start]\((10010101)_2\) [cite: 33]</li>
+                <li>B. [cite_start]\((227)_8\) [cite: 34]</li>
+                <li>C. [cite_start]\((143)_5\) [cite: 35]</li>
+                <li>D. [cite_start]\((96)_{16}\) [cite: 36]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：B [cite: 28]</span>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">7. [cite_start]在机器中，____的零的表示形式是唯一的。 [cite: 37]</div>
+            <ul class="options">
+                <li>A. [cite_start]原码 [cite: 39]</li>
+                <li>B. [cite_start]补码 [cite: 40]</li>
+                <li>C. [cite_start]反码 [cite: 41]</li>
+                <li>D. [cite_start]原码和反码 [cite: 42]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：B [cite: 38]</span>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">8 (原题号9). [cite_start]针对8位二进制数，下列说法中正确的是 [cite: 43]</div>
+            <ul class="options">
+                <li>A. [cite_start]-127的补码为10000000 [cite: 44]</li>
+                <li>B. [cite_start]-127的反码等于0的移码 [cite: 46]</li>
+                <li>C. [cite_start]+1的移码等于-127的反码 [cite: 47]</li>
+                <li>D. [cite_start]0的补码等于-1的反码 [cite: 48]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：B [cite: 45]</span>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">9. [cite_start]一个8位二进制整数采用补码表示，且由3个“1”和5个“0”组成，则最小值为 [cite: 49]</div>
+            <ul class="options">
+                <li>A. [cite_start]-127 [cite: 51]</li>
+                <li>B. [cite_start]-32 [cite: 52]</li>
+                <li>C. [cite_start]125 [cite: 56]</li>
+                <li>D. [cite_start]-3 [cite: 57]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：B [cite: 50]</span>
+            (注：原文标记B，但通常补码最小值应负数绝对值最大，10000011为-125，11100000为-32，需根据具体位权分析)
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">10. [cite_start]计算机系统中采用补码运算的目的是为了 [cite: 53]</div>
+            <ul class="options">
+                <li>A. [cite_start]与手工运算方式保持一致 [cite: 54]</li>
+                <li>B. [cite_start]提高运算速度 [cite: 59]</li>
+                <li>C. [cite_start]简化计算机的设计 [cite: 55]</li>
+                <li>D. [cite_start]提高运算的精度 [cite: 60]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：C [cite: 58]</span>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">11. [cite_start]若某数x的真值为-0.1010，在计算机中该数表示为1.0110，则该数所用的编码方法是____码。 [cite: 61]
+            </div>
+            <ul class="options">
+                <li>A. [cite_start]原 [cite: 63]</li>
+                <li>B. [cite_start]补 [cite: 64]</li>
+                <li>C. [cite_start]反 [cite: 65]</li>
+                <li>D. [cite_start]移 [cite: 66]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：B [cite: 62]</span>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">12. [cite_start]长度相同但格式不同的2种浮点数，假定前者阶码长、尾数短，后者阶码短、尾数长，其他规定均相同，则它们可表示的数的范围和精度为。
+                [cite: 67]</div>
+            <ul class="options">
+                <li>A. [cite_start]两者可表示的数的范围和精度相同 [cite: 69]</li>
+                <li>B. [cite_start]前者可表示的数的范围大但精度低 [cite: 69]</li>
+                <li>C. [cite_start]后者可表示的数的范围大且精度高 [cite: 70]</li>
+                <li>D. [cite_start]前者可表示的数的范围大且精度高 [cite: 70]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：B [cite: 68]</span>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">13. [cite_start]某机字长32位，采用定点小数表示，符号位为1位，尾数为31位，则可表示的最大正小数为____，最小负小数为____ [cite:
+                72]</div>
+            <ul class="options">
+                <li>A. [cite_start]\(+(2^{31}-1)\) [cite: 74]</li>
+                <li>B. [cite_start]\(-(1-2^{-32})\) [cite: 79]</li>
+                <li>C. [cite_start]\(+(1-2^{-31})\approx+1\) [cite: 75]</li>
+                <li>D. [cite_start]\(-(1-2^{-31})\approx-1\) [cite: 80]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：D [cite: 76]</span> (注：此题原文选项排列较乱，根据上下文，定点小数最大值为 \(1-2^{-31}\) ，最小值为
+            \(-1\) 或 \(-(1-2^{-31})\) 取决于原码还是补码，题意倾向于D)
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">14. [cite_start]运算器虽有许多部件组成，但核心部分是 [cite: 77]</div>
+            <ul class="options">
+                <li>A. [cite_start]数据总线 [cite: 78]</li>
+                <li>B. [cite_start]算数逻辑运算单元 [cite: 82]</li>
+                <li>C. [cite_start]多路开关 [cite: 87]</li>
+                <li>D. [cite_start]通用寄存器 [cite: 83]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：B [cite: 81]</span>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">15. [cite_start]在定点二进制运算器中，减法运算一般通过____来实现。 [cite: 88]</div>
+            <ul class="options">
+                <li>A. [cite_start]原码运算的二进制减法器 [cite: 89]</li>
+                <li>B. [cite_start]补码运算的二进制减法器 [cite: 85]</li>
+                <li>C. [cite_start]补码运算的十进制加法器 [cite: 90]</li>
+                <li>D. [cite_start]补码运算的二进制加法器 [cite: 86]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：D [cite: 84]</span>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">16. [cite_start]在定点运算器中，无论采用双符号位还是单符号位，必须有____，它一般用____来实现。 [cite: 91]</div>
+            <ul class="options">
+                <li>A. [cite_start]译码电路，与非门 [cite: 93]</li>
+                <li>B. [cite_start]编码电路，或非门 [cite: 96]</li>
+                <li>C. [cite_start]溢出判断电路，异或门 [cite: 94]</li>
+                <li>D. [cite_start]移位电路，与或非门 [cite: 97]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：C [cite: 92]</span>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">17. [cite_start]下列说法中正确的是 [cite: 95]</div>
+            <ul class="options">
+                <li>A. [cite_start]采用变形补码进行加减运算可以避免溢出 [cite: 99]</li>
+                <li>B. [cite_start]只有定点数运算才有可能溢出，浮点数运算不会产生溢出 [cite: 100]</li>
+                <li>C. [cite_start]只有带符号数的运算才有可能产生溢出 [cite: 101]</li>
+                <li>D. [cite_start]将两个正数相加有可能产生溢出 [cite: 102]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：D [cite: 98]</span>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">18. [cite_start]在定点数运算中产生溢出的原因是 [cite: 103]</div>
+            <ul class="options">
+                <li>A. [cite_start]运算过程中最高位产生了进位或借位 [cite: 104]</li>
+                <li>B. [cite_start]参加运算的操作数超过了机器的表示范围 [cite: 106]</li>
+                <li>C. [cite_start]运算的结果的操作数超过了机器的表示范围 [cite: 107]</li>
+                <li>D. [cite_start]寄存器的位数太少，不得不舍弃最低有效位 [cite: 108]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：C [cite: 105]</span>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">19. [cite_start]下溢指的是 [cite: 109]</div>
+            <ul class="options">
+                <li>A. [cite_start]运算结果的绝对值小于机器所能表示的最小绝对值 [cite: 111]</li>
+                <li>B. [cite_start]运算的结果小于机器所能表示的最小负数 [cite: 112]</li>
+                <li>C. [cite_start]运算的结果小于机器所能表示的最小正数 [cite: 113]</li>
+                <li>D. [cite_start]运算结果的最低有效位产生的错误 [cite: 114]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：A [cite: 110]</span>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">20. [cite_start]存储单元是指 [cite: 115]</div>
+            <ul class="options">
+                <li>A. [cite_start]存放一个二进制信息位的存储元 [cite: 117]</li>
+                <li>B. [cite_start]存放一个机器字的所有存储元集合 [cite: 122]</li>
+                <li>C. [cite_start]存放一个字节的所有存储元集合 [cite: 118]</li>
+                <li>D. [cite_start]存放两个字节的所有存储元集合 [cite: 123]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：B [cite: 116]</span>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">21. [cite_start]和外存储器相比，内存储器的特点是 [cite: 119]</div>
+            <ul class="options">
+                <li>A. [cite_start]容量大、速度快、成本低 [cite: 120]</li>
+                <li>B. [cite_start]容量大、速度慢、成本高 [cite: 124]</li>
+                <li>C. [cite_start]容量小、速度快、成本高 [cite: 121]</li>
+                <li>D. [cite_start]容量小、速度快、成本低 [cite: 125]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：C [cite: 123]</span>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">22. [cite_start]某计算机字长16位，存储器容量64KB，若按字编址，那么它的寻址范围是 [cite: 126]</div>
+            <ul class="options">
+                <li>A. [cite_start]64K [cite: 127]</li>
+                <li>B. [cite_start]32K [cite: 128]</li>
+                <li>C. [cite_start]64KB [cite: 129]</li>
+                <li>D. [cite_start]32KB [cite: 126]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：B [cite: 126] (注：64KB / 2B = 32K)</span>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">23. [cite_start]某DRAM芯片，其存储容量为512K×8位，该芯片的地址线和数据线数目为 [cite: 130]</div>
+            <ul class="options">
+                <li>A. [cite_start]8, 512 [cite: 131]</li>
+                <li>B. [cite_start]512, 8 [cite: 132]</li>
+                <li>C. [cite_start]18, 8 [cite: 134] (注：原文C可能为18,8, D为19,8)</li>
+                <li>D. [cite_start]19, 8 [cite: 134] (512K = 2^19)</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：D [cite: 135]</span>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">24. [cite_start]某计算机字长32位，其存储容量为4MB，若按字编址，它的寻址范围是 [cite: 132]</div>
+            <ul class="options">
+                <li>A. [cite_start]1M [cite: 132]</li>
+                <li>B. [cite_start]4MB [cite: 133]</li>
+                <li>C. [cite_start]4M [cite: 134]</li>
+                <li>D. [cite_start]1MB [cite: 136]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：A (4MB / 4B = 1M) [cite: 132]</span>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">25. [cite_start]主存储器和CPU之间增加Cache的目的是 [cite: 140]</div>
+            <ul class="options">
+                <li>A. [cite_start]解决CPU和主存之间的速度匹配问题 [cite: 141]</li>
+                <li>B. [cite_start]扩大主存储器的容量 [cite: 142]</li>
+                <li>C. [cite_start]扩大 CPU 中通用寄存器的数量 [cite: 143]</li>
+                <li>D. [cite_start]既扩大主存容量又扩大CPU通用寄存器数量 [cite: 144]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：A [cite: 148]</span>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">26. [cite_start]EPROM 是指 [cite: 145]</div>
+            <ul class="options">
+                <li>A. [cite_start]只读存储器 [cite: 146]</li>
+                <li>B. [cite_start]随机存储器 [cite: 149]</li>
+                <li>C. [cite_start]可编程只读存储器 [cite: 150]</li>
+                <li>D. [cite_start]可擦写可编程只读存储器 [cite: 151]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：D [cite: 147]</span> (通常EPROM指Erasable Programmable ROM)
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">27. [cite_start]寄存器间接寻址方式中，操作数处在 [cite: 152]</div>
+            <ul class="options">
+                <li>A. [cite_start]通用寄存器 [cite: 154]</li>
+                <li>B. [cite_start]内存单元 [cite: 155]</li>
+                <li>C. [cite_start]程序计数器 [cite: 156]</li>
+                <li>D. [cite_start]堆栈 [cite: 156]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：B [cite: 153]</span>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">28. [cite_start]扩展操作码是 [cite: 157]</div>
+            <ul class="options">
+                <li>A. [cite_start]操作码字段外辅助操作字段的代码 [cite: 159]</li>
+                <li>B. [cite_start]操作码字段中用来进行指令分类的代码 [cite: 160]</li>
+                <li>C. [cite_start]指令格式中的操作码 [cite: 161]</li>
+                <li>D. [cite_start]一种指令优化技术，不同地址数指令可以具有不同的操作码长度 [cite: 162]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：D [cite: 158]</span>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">29. [cite_start]指令系统中采用不同寻址方式的目的主要是 [cite: 163]</div>
+            <ul class="options">
+                <li>A. [cite_start]实现存储程序和程序控制 [cite: 164]</li>
+                <li>B. [cite_start]缩短指令长度、扩大寻址空间、提高编程灵活性 [cite: 165]</li>
+                <li>C. [cite_start]可以直接访问外存 [cite: 166]</li>
+                <li>D. [cite_start]提供扩展操作码的可能并降低指令译码难度 [cite: 167]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：B [cite: 168]</span>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">30. [cite_start]单地址指令中为了完成两个数的算术运算，除地址码指明的一个操作数外，另一个数常采用____寻址。 [cite: 169]
+            </div>
+            <ul class="options">
+                <li>A. [cite_start]堆栈寻址模式 [cite: 172]</li>
+                <li>B. [cite_start]立即寻址方式 [cite: 174]</li>
+                <li>C. [cite_start]隐含寻址方式 [cite: 173]</li>
+                <li>D. [cite_start]间接寻址方式 [cite: 175]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：C [cite: 171]</span>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">31. [cite_start]对某个寄存器中操作数的寻址方式称为 [cite: 181]</div>
+            <ul class="options">
+                <li>A. [cite_start]直接 [cite: 182]</li>
+                <li>B. [cite_start]间接 [cite: 177]</li>
+                <li>C. [cite_start]寄存器 [cite: 178]</li>
+                <li>D. [cite_start]寄存器间接 [cite: 179]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：C [cite: 176]</span> (原文标记可能有误，通常寄存器直接寻址称为寄存器寻址)
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">33. [cite_start]变址寻址方式中，操作数的有效地址等于 [cite: 183]</div>
+            <ul class="options">
+                <li>A. [cite_start]基值寄存器内容加上形式地址(位移量) [cite: 184]</li>
+                <li>B. [cite_start]堆栈指示器内容加上形式地址 [cite: 195]</li>
+                <li>C. [cite_start]变址寄存器内容加上形式地址 [cite: 184]</li>
+                <li>D. [cite_start]程序计数器内容加上形式地址 [cite: 196]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：C [cite: 194]</span>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">34. [cite_start]程序控制类指令的功能是 [cite: 185]</div>
+            <ul class="options">
+                <li>A. [cite_start]进行算术运算和逻辑运算 [cite: 186]</li>
+                <li>B. [cite_start]进行主存与CPU之间的数据传送 [cite: 197]</li>
+                <li>C. [cite_start]进行CPU和I/O设备之间的数据传送 [cite: 188]</li>
+                <li>D. [cite_start]改变程序执行的顺序 [cite: 198]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：D [cite: 187]</span>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">35. [cite_start]同步控制方式是 [cite: 189]</div>
+            <ul class="options">
+                <li>A. [cite_start]只适用于CPU控制的方式 [cite: 190]</li>
+                <li>B. [cite_start]只适用于外设控制的方式 [cite: 199]</li>
+                <li>C. [cite_start]由统一时序信号控制的方式 [cite: 192]</li>
+                <li>D. [cite_start]所有指令执行时间都相同的方式 [cite: 200]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：C [cite: 191]</span>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">36. [cite_start]异步控制方式常用于____作为其主要控制方式。 [cite: 193]</div>
+            <ul class="options">
+                <li>A. [cite_start]在单总线结构计算机中访问主存与外设时 [cite: 202]</li>
+                <li>B. [cite_start]微型机的CPU控制中 [cite: 202]</li>
+                <li>C. [cite_start]组合逻辑控制的CPU中 [cite: 203]</li>
+                <li>D. [cite_start]微程序控制器中 [cite: 207]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：A [cite: 201]</span>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">37. [cite_start]在一个微周期中 [cite: 204]</div>
+            <ul class="options">
+                <li>A. [cite_start]只能执行一个微操作 [cite: 206]</li>
+                <li>B. [cite_start]能执行多个微操作，但它们一定是并行操作的 [cite: 209]</li>
+                <li>C. [cite_start]能顺序执行多个微操作 [cite: 210]</li>
+                <li>D. [cite_start]只能执行相斥性的操作 [cite: 211]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：B [cite: 220] (注意：原文答案位置可能对应在下文，根据常识B正确，原文标记可能是B)</span>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">38. [cite_start]指令周期是指 [cite: 212]</div>
+            <ul class="options">
+                <li>A. [cite_start]CPU 从主存取出一条指令的时间 [cite: 214]</li>
+                <li>B. [cite_start]CPU 执行一条指令的时间 [cite: 215]</li>
+                <li>C. [cite_start]CPU 从主存取出一条指令加上执行这条指令的时间 [cite: 216]</li>
+                <li>D. [cite_start]时钟周期时间 [cite: 217]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：C [cite: 213]</span>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">39. [cite_start]在CPU中跟踪指令后继地址的寄存器是 [cite: 218]</div>
+            <ul class="options">
+                <li>A. [cite_start]主存地址寄存器 [cite: 219]</li>
+                <li>B. [cite_start]程序计数器 [cite: 221]</li>
+                <li>C. [cite_start]指令寄存器 [cite: 222]</li>
+                <li>D. [cite_start]状态寄存器 [cite: 223]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：B [cite: 220]</span>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">40. [cite_start]中央处理器是指 [cite: 224]</div>
+            <ul class="options">
+                <li>A. [cite_start]运算器 [cite: 226]</li>
+                <li>B. [cite_start]控制器 [cite: 227]</li>
+                <li>C. [cite_start]运算器和控制器 [cite: 228]</li>
+                <li>D. [cite_start]运算器、控制器和主存储器 [cite: 233]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：C [cite: 225]</span>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">41. [cite_start]计算机操作的最小时间单位是 [cite: 229]</div>
+            <ul class="options">
+                <li>A. [cite_start]时钟周期 [cite: 230]</li>
+                <li>B. [cite_start]指令周期 [cite: 231]</li>
+                <li>C. [cite_start]CPU周期 [cite: 234]</li>
+                <li>D. [cite_start]外围设备 [cite: 234]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：A [cite: 232]</span>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">42. [cite_start]微程序控制器中，机器指令与微指令的关系是 [cite: 235]</div>
+            <ul class="options">
+                <li>A. [cite_start]每一条机器指令由一条微指令来执行 [cite: 236]</li>
+                <li>B. [cite_start]每一条机器指令由一段用微指令编成的微程序来解释执行 [cite: 238]</li>
+                <li>C. [cite_start]一段机器指令组成的程序可由一条微指令来执行 [cite: 239]</li>
+                <li>D. [cite_start]一条微指令由若干条机器指令组成 [cite: 240]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：B [cite: 237]</span>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">43. [cite_start]为了确定下一条微指令的地址，通常采用断定方式，其基本思想是 [cite: 241]</div>
+            <ul class="options">
+                <li>A. [cite_start]用程序计数器 PC来产生后继续微指令地址 [cite: 242]</li>
+                <li>B. [cite_start]用微程序计数器PC来产生后继微指令地址 [cite: 243]</li>
+                <li>C. [cite_start]通过微指令控制字段由设计者指定或者由设计者指定的判别字段控制产生后继微指令地址 [cite: 245]</li>
+                <li>D. [cite_start]通过指令中指令一个专门字段来控制产生后继微指令地址 [cite: 246]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：C [cite: 244]</span>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">44. [cite_start]就微命令的编码方式而言，若微操作命令的个数已确定，则 [cite: 247]</div>
+            <ul class="options">
+                <li>A. [cite_start]直接表示法比编码表示法的微指令字长短 [cite: 248]</li>
+                <li>B. [cite_start]编码表示法比直接表示法的微指令字长短 [cite: 249]</li>
+                <li>C. [cite_start]编码表示法与直接表示法的微指令字长相等 [cite: 250]</li>
+                <li>D. [cite_start]编码表示法与直接表示法的微指令字长大小关系不确定 [cite: 251]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：B [cite: 253]</span>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">45. [cite_start]下列说法中正确的是 [cite: 252]</div>
+            <ul class="options">
+                <li>A. [cite_start]微程序控制方式和硬布线控制方式相比较，前者可以使指令的执行速度更快 [cite: 254]</li>
+                <li>B. [cite_start]若采用微程序控制方式，则可用 \(\mu PC\) 取代PC [cite: 255]</li>
+                <li>C. [cite_start]控制存储器可以用掩模 ROM、EPROM或闪速存储器实现 [cite: 256]</li>
+                <li>D. [cite_start]指令周期也称为CPU周期 [cite: 257]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：C [cite: 256] (原文答案标记不清，通常C是正确的)</span>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">46. [cite_start]系统总线中地址线的功用是 [cite: 258]</div>
+            <ul class="options">
+                <li>A. [cite_start]用于选择主存单元 [cite: 259]</li>
+                <li>B. [cite_start]用于选择进行信息传输的设备 [cite: 260]</li>
+                <li>C. [cite_start]用于指定主存单元和I/O设备接口电路的地址 [cite: 261]</li>
+                <li>D. [cite_start]用于传送主存物理地址和逻辑地址 [cite: 262]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：C [cite: 258]</span>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">47. [cite_start]数据总线的宽度由总线的____定义。 [cite: 264]</div>
+            <ul class="options">
+                <li>A. [cite_start]物理特性 [cite: 265]</li>
+                <li>B. [cite_start]功能特性 [cite: 267]</li>
+                <li>C. [cite_start]电气特性 [cite: 268]</li>
+                <li>D. [cite_start]时间特性 [cite: 269]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：A [cite: 266]</span>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">48. [cite_start]在单机系统中，多总线结构的计算机的总线系统一般由____组成。 [cite: 271]</div>
+            <ul class="options">
+                <li>A. [cite_start]系统总线、内存总线和I/O总线 [cite: 272]</li>
+                <li>B. [cite_start]数据总线、地址总线和控制总线 [cite: 273]</li>
+                <li>C. [cite_start]内部总线、系统总线和I/O总线 [cite: 274]</li>
+                <li>D. [cite_start]ISA总线、VESA总线和PCI总线 [cite: 277]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：A [cite: 270]</span>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">49. [cite_start]下列陈述中不正确的是 [cite: 275]</div>
+            <ul class="options">
+                <li>A. [cite_start]总线结构传送方式可以提高数据的传输速度 [cite: 278]</li>
+                <li>B. [cite_start]与独立请求方式相比，链式查询方式对电路的故障更敏感 [cite: 279]</li>
+                <li>C. [cite_start]PCI总线采用同步时序协议和集中式仲裁策略 [cite: 280]</li>
+                <li>D. [cite_start]总线的带宽即总线本身所能达到的最高传输速率 [cite: 281]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：A [cite: 276]</span>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">50. [cite_start]中断发生时，由硬件更新程序计数器PC，而不是由软件完成，主要是为了 [cite: 282]</div>
+            <ul class="options">
+                <li>A. [cite_start]能进入中断处理程序并正确返回源程序 [cite: 283]</li>
+                <li>B. [cite_start]节省内容 [cite: 283]</li>
+                <li>C. [cite_start]提高处理机的速度 [cite: 284]</li>
+                <li>D. [cite_start]使中断处理程序易于编址，不易出错 [cite: 285]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：C [cite: 284]</span>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">51. [cite_start]在I/O设备、数据通道、时钟和软件这4项中，可能成为中断源的是 [cite: 290]</div>
+            <ul class="options">
+                <li>A. [cite_start]I/O 设备 [cite: 291]</li>
+                <li>B. [cite_start]I/O 设备和数据通道 [cite: 287]</li>
+                <li>C. [cite_start]I/O 设备、数据通道和时钟 [cite: 292]</li>
+                <li>D. [cite_start]I/O 设备、数据通道、时钟和软件 [cite: 288]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：D [cite: 286]</span>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">53. [cite_start]在单级中断系统中，CPU一旦响应中断，则立即关闭____标志，以防止本次中断服务结束前同级的其他中断源产生另一次中断进行干扰。
+                [cite: 297]</div>
+            <ul class="options">
+                <li>A. [cite_start]中断允许 [cite: 298]</li>
+                <li>B. [cite_start]中断请求 [cite: 298]</li>
+                <li>C. [cite_start]中断屏蔽 [cite: 298]</li>
+                <li>D. [cite_start]开放或关闭可屏蔽硬中断 [cite: 308]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：A [cite: 300]</span>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">54. [cite_start]为了便于实现多级中断，保存现场信息最有效的方法是采用 [cite: 302]</div>
+            <ul class="options">
+                <li>A. [cite_start]通用寄存器 [cite: 302]</li>
+                <li>B. [cite_start]堆栈 [cite: 302]</li>
+                <li>C. [cite_start]储存器 [cite: 302]</li>
+                <li>D. [cite_start]外存 [cite: 302]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：B [cite: 301]</span>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">55. [cite_start]为实现 CPU与外部设备并行工作，必须引入的基础硬件是 [cite: 303]</div>
+            <ul class="options">
+                <li>A. [cite_start]缓冲器 [cite: 303]</li>
+                <li>B. [cite_start]通道 [cite: 303]</li>
+                <li>C. [cite_start]时钟 [cite: 304]</li>
+                <li>D. [cite_start]相联寄存器 [cite: 305]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：A (或B，原文标注A，但通道也是并行工作的基础，根据上下文A为缓冲器) [cite: 289]</span>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">56. [cite_start]中断允许触发器用来 [cite: 306]</div>
+            <ul class="options">
+                <li>A. [cite_start]表示外设是否提出了中断请求 [cite: 299]</li>
+                <li>B. [cite_start]CPU 是否响应了中断请求 [cite: 307]</li>
+                <li>C. [cite_start]CPU 是否在进行中断处理 [cite: 320]</li>
+                <li>D. [cite_start]开放或关闭可屏蔽硬中断 [cite: 308]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：D [cite: 306]</span>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">57. [cite_start]采用DMA方式传递数据时，每传送一个数据就要占用一个____时间。 [cite: 321]</div>
+            <ul class="options">
+                <li>A. [cite_start]指令周期 [cite: 309]</li>
+                <li>B. [cite_start]机器周期 [cite: 310]</li>
+                <li>C. [cite_start]存储周期 [cite: 311]</li>
+                <li>D. [cite_start]总线周期 [cite: 312]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：C [cite: 322]</span>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">58. [cite_start]周期挪用方式常用于____方式的输入/输出中。 [cite: 313]</div>
+            <ul class="options">
+                <li>A. [cite_start]DMA [cite: 313]</li>
+                <li>B. [cite_start]中断 [cite: 315]</li>
+                <li>C. [cite_start]程序传送 [cite: 316]</li>
+                <li>D. [cite_start]通道 [cite: 317]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：A [cite: 314]</span>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">59. [cite_start]通道是重要的I/O方式，其中适合连接大量终端及打印机的通道是 [cite: 318]</div>
+            <ul class="options">
+                <li>A. [cite_start]数组多路通道 [cite: 323]</li>
+                <li>B. [cite_start]选择通道 [cite: 323]</li>
+                <li>C. [cite_start]字节多路通道 [cite: 324]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：C [cite: 319]</span>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">60. [cite_start]磁表面存储器不具备的特点是 [cite: 325]</div>
+            <ul class="options">
+                <li>A. [cite_start]存储密度高 [cite: 327]</li>
+                <li>B. [cite_start]可脱机保存 [cite: 327]</li>
+                <li>C. [cite_start]速度快 [cite: 328]</li>
+                <li>D. [cite_start]容量大 [cite: 328]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：C [cite: 326]</span>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">61. [cite_start]计算机的外部设备是指 [cite: 329]</div>
+            <ul class="options">
+                <li>A. [cite_start]输入/输出设备 [cite: 330]</li>
+                <li>B. [cite_start]外存设备 [cite: 332]</li>
+                <li>C. [cite_start]远程通信设备 [cite: 333]</li>
+                <li>D. [cite_start]除了CPU和内存以外的其他设备 [cite: 334]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：D [cite: 331]</span>
+        </div>
+
+        <div class="question-block">
+            <div class="question-title">62. [cite_start]在微型机系统中外部设备通过____与主板的系统总线相连接。 [cite: 336]</div>
+            <ul class="options">
+                <li>A. [cite_start]累加器 [cite: 337]</li>
+                <li>B. [cite_start]设备控制器 [cite: 339]</li>
+                <li>C. [cite_start]计数器 [cite: 340]</li>
+                <li>D. [cite_start]寄存器 [cite: 341]</li>
+            </ul>
+            [cite_start]<span class="answer-key">答案：B [cite: 336]</span>
+        </div>
+
+        <h2>二、简答题</h2>
+
+        <ol class="question-list">
+            <!-- 第1题 -->
+            <li class="question-item">
+                <div class="question-title">1、冯·诺依曼型计算机的基本特点是什么？</div>
+                <div class="answer">
+                    <p><strong>答：</strong>冯·诺依曼原理的基本思想是：</p>
+                    <ul>
+                        <li>采用二进制形式表示数据和指令。指令由操作码和地址码组成。</li>
+                        <li>将程序和数据存放在存储器中，使计算机在工作时从存储器取出指令加以执行，自动完成计算任务。这就是“存储程序”和“程序控制”（简称存储程序控制）的概念。</li>
+                        <li>指令的执行是顺序的，即一般按照指令在存储器中存放的顺序执行，程序分支由转移指令实现。</li>
+                        <li>计算机由存储器、运算器、控制器、输入设备和输出设备五大基本部件组成，并规定了5部分的概本功能。</li>
+                    </ul>
+                    <p>冯·诺依曼型计算机的基本特点也可以用“存储程序”和“程序控制”来高度概括。</p>
+                </div>
+            </li>
+
+            <!-- 第2题 -->
+            <li class="question-item">
+                <div class="question-title">2、计算机硬件有哪些部件，各部件的作用是什么？</div>
+                <div class="answer">
+                    <p><strong>答：</strong>计算机的硬件系统由有形的电子器件等构成的，它包括运算器、存储器、控制器、输入输出设备及总线系统组成。而总线分为数据总线、地址总线、控制总线，其结构有单总线结构、双总线结构及多总线结构。
+                    </p>
+                    <ul>
+                        <li><strong>存储器（Memory）：</strong>是用来存放数据和程序的部件；</li>
+                        <li><strong>运算器：</strong>是对信息进行运算处理的部件；</li>
+                        <li><strong>控制器：</strong>是整个计算机的控制核心。它的主要功能是读取指令、翻译指令代码、并向计算机各部分发出控制信号，以便执行指令；</li>
+                        <li><strong>输入设备：</strong>能将数据和程序变换成计算机内部所能识别和接受的信息方式，并顺序地把它们送入存储器中；</li>
+                        <li><strong>输出设备：</strong>将计算机处理的结果以人们能接受的或其它机器能接受的形式送出。</li>
+                    </ul>
+                </div>
+            </li>
+
+            <!-- 第3题 -->
+            <li class="question-item">
+                <div class="question-title">3、什么是总线？以总线组成计算机有哪些组成结构？</div>
+                <div class="answer">
+                    <p><strong>答：</strong>总线（Bus）就是计算机中用于传送信息的公用通道，是为多个部件服务的一组信息传送连接线。按照总线的连接方式，计算机组成结构可以分为单总线结构、双总线结构和多总线结构等。
+                    </p>
+                </div>
+            </li>
+
+            <!-- 第4题 -->
+            <li class="question-item">
+                <div class="question-title">4、什么是硬件、软件和固件？什么是软件和硬件的逻辑等价？在什么意义上软件和硬件是不等价的？</div>
+                <div class="answer">
+                    <p><strong>答：</strong></p>
+                    <ul>
+                        <li><strong>计算机硬件（Hardware）：</strong>是指构成计算机的所有实体部件的集合，通常这些部件由电路（电子元件）、机械等物理部件组成。</li>
+                        <li><strong>计算机软件（Software）：</strong>是指能使计算机工作的程序和程序运行时所需要的数据，以及与这些程序和数据有关的文字说明和图表资料，其中文字说明和图表资料又称为文档。
+                        </li>
+                        <li><strong>固件（Firmware）：</strong>是一种介于传统的软件和硬件之间的实体，功能上类似软件，但形态上又是硬件。微程序是计算机硬件和软件相结合的重要形式。</li>
+                    </ul>
+                    <p><strong>软件和硬件的逻辑等价含义：</strong></p>
+                    <ol>
+                        <li>任何一个由软件所完成的操作也可以直接由硬件来实现；</li>
+                        <li>任何一条由硬件所执行的指令也能用软件来完成。</li>
+                    </ol>
+                    <p>在物理意义上软件和硬件是不等价的。</p>
+                </div>
+            </li>
+
+            <!-- 第5题 -->
+            <li class="question-item">
+                <div class="question-title">5、计算机系统按程序设计语言划分为哪几个层次？</div>
+                <div class="answer">
+                    <p><strong>答：</strong>计算机系统是一个由硬件、软件组成的多级层次结构，它通常由微程序级、一般机器级、操作系统级、汇编语言级、高级语言级组成，每一级上都能创造程序设计，且得到下级的支持。
+                    </p>
+                </div>
+            </li>
+
+            <!-- 第6题 -->
+            <li class="question-item">
+                <div class="question-title">6、解释如下概念：ALU, CPU, 主机和字长。</div>
+                <div class="answer">
+                    <p><strong>答：</strong></p>
+                    <ul>
+                        <li><strong>算术逻辑运算部件（ALU: Arithmetic Logic Unit）：</strong>是运算器的核心组成，功能是完成算数和逻辑运算。</li>
+                        <li><strong>中央处理单元（CPU: Central Processing Unit）：</strong>包括运算器和控制器，是计算机的信息处理的中心部件。</li>
+                        <li><strong>主机：</strong>存储器、运算器和控制器在信息处理操作中起主要作用，是计算机硬件的主体部分，通常称为“主机”。</li>
+                        <li><strong>字长：</strong>决定了计算机的运算精度、指令字长度、存储单元长度等，可以是 8/16/32/64/128 位（bit）等。</li>
+                    </ul>
+                </div>
+            </li>
+
+            <!-- 第7题 -->
+            <li class="question-item">
+                <div class="question-title">7、常用的计算机性能指标有哪些？</div>
+                <div class="answer">
+                    <p><strong>答：</strong>评价计算机性能是一个复杂的问题，早期只限于字长、运算速度和存储容量 3 大指标。目前要考虑的因素有如下几个方面：</p>
+                    <ol>
+                        <li><strong>主频：</strong>主频很大程度上决定了计算机的运行速度，它的单位是兆赫兹(MHz)。</li>
+                        <li><strong>字长：</strong>字长决定了计算机的运算精度、指令字长度、存储单元长度等，可以是 8/16/32/64/128 位(bit)。</li>
+                        <li><strong>运算速度：</strong>衡量计算机运算速度的早期方法是每秒执行加法指令的次数，现在通常用等效速度。</li>
+                        <li><strong>存储容量：</strong>以字为单位的计算机常以字数乘字长来表明存储容量。</li>
+                        <li><strong>可靠性：</strong>系统是否运行稳定非常重要，常用平均无故障时间(MTBF)衡量。</li>
+                        <li><strong>可维护性：</strong>系统可维护性是指系统出了故障能否尽快恢复，可用平均修复时间(MTRF)表示，它是指从故障发生到机器修复平均所需要的时间。</li>
+                        <li><strong>可用性：</strong>是指计算机的使用效率。</li>
+                        <li><strong>兼容性：</strong>兼容是广泛的概念，是指设备或程序可以用于多种系统的性能。兼容使得机器的资源得以继承和发展，有利于计算机的推广和普及。</li>
+                    </ol>
+                </div>
+            </li>
+
+            <!-- 第8题 -->
+            <li class="question-item">
+                <div class="question-title">8、多媒体的含义是什么？</div>
+                <div class="answer">
+                    <p><strong>答：</strong>多媒体技术是指能够同时获取、处理、编辑、存储和展示两个以上不同信息类型媒体的技术。计算机信息的形式可以是文字、声音、图形和图象等。</p>
+                </div>
+            </li>
+
+            <!-- 第9题 -->
+            <li class="question-item">
+                <div class="question-title">9、简单描述计算机的层次结构，说明各层次的主要特点。</div>
+                <div class="answer">
+                    <p><strong>答：</strong>现代计算机系统是一个硬件与软件组成的综合体，可以把它看成是按功能划分的多级层次结构。</p>
+                    <ul>
+                        <li><strong>第0级为硬件组成的实体。</strong></li>
+                        <li><strong>第1级是微程序级。</strong>这级的机器语言是微指令集，程序员用微指令编写的微程序一般是直接由硬件执行的。</li>
+                        <li><strong>第2级是传统机器级。</strong>这级的机器语言是该机的指令集，程序员用机器指令编写的程序可以由微程序进行解释。</li>
+                        <li><strong>第3级操作系统级。</strong>从操作系统的基本功能来看，一方面它要直接管理传统机器中的软硬件资源，另一方面它又是传统机器的延伸。</li>
+                        <li><strong>第4级是汇编语言级。</strong>这级的机器语言是汇编语言，完成汇编语言翻译的程序叫做汇编程序。</li>
+                        <li><strong>第5级是高级语言级。</strong>这级的机器语言就是各种高级语言，通常用编译程序来完成高级语言翻译工作。</li>
+                        <li><strong>第6级是应用语言级。</strong>这一级是为了使计算机满足某种用途而专门设计的，因此这一级语言就是各种面向问题的应用语言。</li>
+                    </ul>
+                </div>
+            </li>
+
+            <!-- 第10题 -->
+            <li class="question-item">
+                <div class="question-title">10、计算机系统的主要技术指标有哪些？</div>
+                <div class="answer">
+                    <p><strong>答：</strong>计算机系统的主要技术指标有：机器字长、数据通路宽度、主存储器容量和运算速度等。</p>
+                    <ul>
+                        <li><strong>机器字长：</strong>是指参与运算的数的基本位数，它是由加法器、寄存器的位数决定的。</li>
+                        <li><strong>数据通路宽度：</strong>是指数据总线一次所能并行传送信息的位数。</li>
+                        <li><strong>主存储器容量：</strong>是指主存储器所能存储的全部信息。</li>
+                        <li><strong>运算速度：</strong>与机器的主频、执行什么样的操作、主存储器本身的速度等许多因素有关。</li>
+                    </ul>
+                </div>
+            </li>
+
+            <!-- 第11题 -->
+            <li class="question-item">
+                <div class="question-title">11、试计算采用 32×32 点阵字形的一个汉字字形占多少字节？存储 6763 个 16×16 点阵以及 24×24
+                    点阵字形的汉字库各需要多少存储容量？</div>
+                <div class="answer">
+                    <p><strong>答：</strong></p>
+                    <p>32×32 点阵：<span class="math-result">128B</span></p>
+                    <p>16×16 点阵汉字库：<span class="math-result">216416B</span></p>
+                    <p>24×24 点阵汉字库：<span class="math-result">486936B</span></p>
+                </div>
+            </li>
+
+            <!-- 第12题 -->
+            <li class="question-item">
+                <div class="question-title">12、海明校验码的编码规则有哪些？</div>
+                <div class="answer">
+                    <p><strong>答：</strong>若海明码的最高位号为 m，最低位号为 1，即
+                        H<sub>m</sub>H<sub>m-1</sub>...H<sub>2</sub>H<sub>1</sub>，则海明码的编码规则是：</p>
+                    <p>（1）校验位与数据位之和为 m，每个校验位 P<sub>i</sub> 在海明码中被分布在位号 2<sup>i-1</sup>
+                        的位置上，其余各位为数据位，并按从低向高逐位依次排列的关系分配各数据位。</p>
+                    <p>（2）海明码的每一位位码 H<sub>i</sub>（包括数据位和校验位）由多个校验位校验，其关系是被校验的每一位位号要等于校验它的各校验位的位号之和。</p>
+                </div>
+            </li>
+
+            <!-- 第13题 -->
+            <li class="question-item">
+                <div class="question-title">13、简述 CRC 码的纠错原理。</div>
+                <div class="answer">
+                    <p><strong>答：</strong>CRC 码是一种纠错能力较强的编码。在进行校验时，将 CRC 码多项式与生成多项式 G(X) 相除，若余数为 0，则表明数据正确；当余数不为 0
+                        时，说明数据有错。只要选择适当的生成多项式 G(X)，余数与 CRC 码出错位置的对应关系是一定的，由此可以用余数作为依据判断出错位置从而纠正错码。</p>
+                </div>
+            </li>
+
+            <!-- 第14题 -->
+            <li class="question-item">
+                <div class="question-title">14、运算器由哪几部分组成？</div>
+                <div class="answer">
+                    <p><strong>答：</strong>运算器的基本结构应包括以下几个部分：</p>
+                    <ol>
+                        <li>能实现算术和逻辑运算功能的部件 <strong>ALU</strong>；</li>
+                        <li>存放待加工的信息或加工后的结果信息的<strong>通用寄存器组</strong>；</li>
+                        <li>按操作要求控制数据输入的部件：<strong>多路开关或数据锁存器</strong>；</li>
+                        <li>按操作要求控制数据输出的部件：<strong>输出移位和多路开关</strong>；</li>
+                        <li>计算器与其它部件进行信息传送的总线以及<strong>总线接收器与发送器</strong>；总线接收器与发送器通常是由三态门构成的。</li>
+                    </ol>
+                </div>
+            </li>
+        </ol>
+    </div>
+    <h2>二、简答题 (续)</h2>
+
+    <!-- 设置 start 属性以延续上一份文档的编号 -->
+    <ol class="question-list" start="15">
+        <!-- 第15题 -->
+        <li class="question-item">
+            <div class="question-title">15、主存储器有哪些性能指标？它们的含义是什么？</div>
+            <div class="answer">
+                <p><strong>答：</strong>存储器的性能指标是对存储器进行设计、使用和提高时的主要依据，存储器性能指标也称为存储器参数。</p>
+                <ol>
+                    <li><strong>存储容量：</strong>是指一个功能完备的存储器所能容纳的二进制信息总量，即可存储多少位二进制信息代码。</li>
+                    <li><strong>存储器速度：</strong>存储器存取时间和存储器存取周期。</li>
+                    <li><strong>数据传输率：</strong>单位时间可写入存储器或从存储器取出信息的最大数量，称为数据传输率或称为存储器传输带宽 b<sub>M</sub>。</li>
+                    <li><strong>可靠性：</strong>存储器的可靠性是指在规定时间内存储器无故障的情况，一般用平均无故障时间 MTBF 来衡量。</li>
+                    <li><strong>价格：</strong>又称成本，它是衡量主存储器经济性能的重要指标。</li>
+                </ol>
+            </div>
+        </li>
+
+        <!-- 第16题 -->
+        <li class="question-item">
+            <div class="question-title">16、主存的基本组成有哪些部分？各部分主要的功能是什么？</div>
+            <div class="answer">
+                <p><strong>答：</strong>主存储器的基本组成：</p>
+                <ol>
+                    <li><strong>贮存信息的存储体。</strong>一般是一个全体基本存储单元按照一定规则排列起来的存储阵列。存储体是存储器的核心。</li>
+                    <li><strong>信息的寻址机构，</strong>即读出和写入信息的地址选择机构。这包括：地址寄存器（MAR）和地址译码器。地址译码器完成地址译码，地址寄存器具有地址缓冲功能。</li>
+                    <li><strong>存储器数据寄存器 MDR。</strong>在数据传送中可以起数据缓冲作用。</li>
+                    <li><strong>写入信息所需的能源，</strong>即写入线路、写驱动器等。</li>
+                    <li><strong>读出所需的能源和读出放大器，</strong>即读出线路、读驱动器和读出放大器。</li>
+                    <li><strong>存储器控制部件。</strong>包括主时序线路、时钟脉冲线路、读逻辑控制线路，写或重写逻辑控制线路以及动态存储器的定时刷新线路等，这些线路总称为存储器控制部件。</li>
+                </ol>
+            </div>
+        </li>
+
+        <!-- 第17题 -->
+        <li class="question-item">
+            <div class="question-title">17、静态 MOS 存储元、动态 MOS 存储元各有什么特点？</div>
+            <div class="answer">
+                <p><strong>答：</strong>在 MOS 半导体存储器中，根据存储信息机构的原理不同，又分为静态 MOS 存储器（SRAM）和动态 MOS
+                    存储器（DRAM），前者利用双稳态触发器来保存信息，只要不断电，信息不会丢失，后者利用 MOS 电容存储电荷来保存信息，使用时需不断给电容充电才能使信息保持。 </p>
+            </div>
+        </li>
+
+        <!-- 第18题 -->
+        <li class="question-item">
+            <div class="question-title">18、什么是刷新？为什么要刷新？有哪几种常用的刷新方式？</div>
+            <div class="answer">
+                <p><strong>答：</strong>对动态存储器要每隔一定时间（通常是 2ms）给全部基本存储元的存储电容补充一次电荷，称为 RAM 的刷新，2ms
+                    是刷新间隔时间。由于存放信息的电荷会有泄漏，动态存储器的电荷不能象静态存储器电路那样，由电源经负载管源源不断地补充，时间一长，就会丢失信息，所以必须刷新。常用的刷新方式有两种：集中式刷新、分布式刷新。
+                </p>
+            </div>
+        </li>
+
+        <!-- 第19题 -->
+        <li class="question-item">
+            <div class="question-title">19、简要说明提高存储器速度有哪些措施？</div>
+            <div class="answer">
+                <p><strong>答：</strong>高速缓冲存储器、多体交叉存储器。</p>
+            </div>
+        </li>
+
+        <!-- 第20题 -->
+        <li class="question-item">
+            <div class="question-title">20、Cache 有哪些特点？</div>
+            <div class="answer">
+                <p><strong>答：</strong>Cache 具有如下特点：</p>
+                <ol>
+                    <li>位于 CPU 与主存之间，是存储器层次结构中级别最高的一级。</li>
+                    <li>容量比主存小，目前一般有数 KB 到数 MB。</li>
+                    <li>速度一般比主存快 5~10 倍，通常由存储速度高的双极型三极管或 SRAM 组成。</li>
+                    <li>其容量是主存的部分副本。</li>
+                    <li>可用来存放指令，也可用来存放数据。</li>
+                    <li>快存的功能全部由硬件实现，并对程序员透明。</li>
+                </ol>
+            </div>
+        </li>
+
+        <!-- 第21题 -->
+        <li class="question-item">
+            <div class="question-title">21、如何区别存储器和寄存器？两者是一回事的说法对吗？</div>
+            <div class="answer">
+                <p><strong>答：</strong>存储器和寄存器不是一回事。存储器在 CPU 的外边，专门用来存放程序和数据，访问存储器的速度较慢。寄存器属于 CPU 的一部分，访问寄存器的速度很快。</p>
+            </div>
+        </li>
+
+        <!-- 第22题 -->
+        <li class="question-item">
+            <div class="question-title">22、存储器的主要功能是什么？为什么要把存储系统分成若干个不同层次？主要有哪些层次？</div>
+            <div class="answer">
+                <p><strong>答：</strong>存储器的主要功能是用来保存程序和数据。存储系统是由几个容量、速度和价格各不相同的存储器用硬件、软件以及硬件与软件相结合的方法连接起来的系统。把存储系统分成若干个不同层次的目的是为了解决存储容量、存取速度和价格之间的矛盾。由高速缓冲存储器、主存储器和辅助存储器构成的三级存储系统可以分为两个层次，其中高速缓冲和主存间称为
+                    Cache-主存存储层次（Cache 存储系统）；主存和辅存间称为主存-辅存存储层次（虚拟存储系统）。</p>
+            </div>
+        </li>
+
+        <!-- 第23题 -->
+        <li class="question-item">
+            <div class="question-title">23、说明存储周期和存取时间的区别。</div>
+            <div class="answer">
+                <p><strong>答：</strong>存取周期是指主存进行一次完整的读写操作所需的全部时间，即连续两次访问存储器操作之间所需要的最短时间。存取时间是指从启动一次存储器操作到完成该操作所经历的时间。存取周期一定大于存取时间。
+                </p>
+            </div>
+        </li>
+
+        <!-- 第24题 -->
+        <li class="question-item">
+            <div class="question-title">24、指令格式设计的准则有哪些？</div>
+            <div class="answer">
+                <p><strong>答：</strong>一台计算机选择怎样的指令格式，涉及多方面因素。一般要求指令的字长要短一些，以得到时间和空间上的优势。但指令也必须有足够的长度以利于增加信息量。再者，指令字长一般应是机器字符长度的整数倍以便存储系统的管理。另外，指令格式的设计还与如何选定指令中操作数地址的位数有关。
+                </p>
+            </div>
+        </li>
+
+        <!-- 第25题 -->
+        <li class="question-item">
+            <div class="question-title">25、指令是灵活多变的，体现在哪些方面？</div>
+            <div class="answer">
+                <p><strong>答：</strong>指令是灵活多变的，主要体现在以下几个方面：指令格式多样；寻址方式丰富；指令类型多种；操作码位数可随地址码个数变化而变化（扩展操作码方式）；指令长度可变等。</p>
+            </div>
+        </li>
+
+        <!-- 第26题 -->
+        <li class="question-item">
+            <div class="question-title">26、试比较基址寻址和变址寻址的异同。</div>
+            <div class="answer">
+                <p><strong>答：</strong>基址寻址方式和变址寻址方式，在形式上是类似的。但用户可使用变址寻址方式编写程序，而基址寻址方式中对于基址寄存器，用户程序无权操作和修改，由系统软件管理控制程序使用特权指令来管理的。再者基址寻址方式主要用以解决程序在存储器中的定位和扩大寻址空间等问题。
+                </p>
+            </div>
+        </li>
+    </ol>
+    </div>
+    <div class="qa-container">
+        <h1>计算机组成原理复习题</h1>
+
+        <h3 class="question">27、堆栈是什么？它有什么特点？功能有哪些？</h3>
+        <div class="answer">
+            <p><strong>答： (1) 堆栈的概念</strong></p>
+            <ul>
+                <li>是若干个存储单元(或寄存器)的有序集合，它顺序地存放一组元素。</li>
+                <li>数据的存取都只能在栈顶单元内进行，即数据的进栈与出栈都只能经过栈顶单元这个“出入口”。</li>
+                <li>堆栈中的数据采用“先进后出”或“后进先出”的存取工作方式。</li>
+            </ul>
+            <p><strong>(2) 堆栈结构在计算机中的作用</strong></p>
+            <ul>
+                <li>具有堆栈结构的机器使用零地址指令，这不仅令指令长度短，指令结构简单，机器硬件简化。</li>
+                <li>实现程序调用，子程序嵌套调用和递归调用。</li>
+                <li>对于“中断”技术，堆栈更是不可缺少的，保存“断点”和“现场”。</li>
+            </ul>
+            <p><strong>(3) 堆栈的操作</strong></p>
+            <p>设数据进栈方向为从高地址向低地址发展，当向堆栈压入数据时，SP 的内容先自动递减而指向一个新的空栈顶单元，再把数据写入此栈顶单元；当数据弹出堆栈时，立即读出 SP 所指向的栈顶单元内容，再把 SP
+                内容自动递增而指向新的栈顶位置。即：</p>
+            <div class="code-block">
+                PUSH X: (SP)-1 → SP
+                (X) → (SP)
+
+                POP X: ((SP)) → X
+                (SP)+1 → SP
+            </div>
+        </div>
+
+        <h3 class="question">28、指令长度和机器字长有什么关系？半字长指令、单字长指令、双字长指令分别表示什么？</h3>
+        <div class="answer">
+            <p><strong>答：</strong>
+                指令长度与机器字长没有固定关系，指令长度可以等于机器字长，也可以大于或小于机器字长。通常，把指令长度等于机器字长的指令称为单字长指令；指令长度等于半个机器字长的指令称为半字长指令；指令长度等于两个机器字长的指令称为双字长指令。
+            </p>
+        </div>
+
+        <h3 class="question">29、计算机进行程序控制工作的基本原理是怎样的？</h3>
+        <div class="answer">
+            <p><strong>答：程序控制原理：</strong></p>
+            <ol>
+                <li>编程；</li>
+                <li>送 MM (通过输入设备)；</li>
+                <li>机器工作时，是按一定的序列逐条取出指令，分析指令，执行指令，并自动转到下一条指令执行，直到程序规定的任务完成；</li>
+                <li>程序控制由控制器承担，程序存储由存储器完成。</li>
+            </ol>
+        </div>
+
+        <h3 class="question">30、控制器的基本功能是什么？基本组成部件包括哪些？</h3>
+        <div class="answer">
+            <p><strong>答：</strong> 控制器的基本功能就是负责指令的读出，进行识别和解释，并指挥协调各功能部件执行指令。控制器的基本结构包括：指令部件、时序部件、微操作控制线路、中断控制逻辑。</p>
+        </div>
+
+        <h3 class="question">31、微程序控制的基本思想是什么？</h3>
+        <div class="answer">
+            <p><strong>答：</strong> 微程序控制技术在现今计算机设计中得到广泛的采用，其实质是用程序设计的思想方法来组织操作控制逻辑。</p>
+        </div>
+
+        <h3 class="question">32、说明微指令和机器指令的区别？</h3>
+        <div class="answer">
+            <p><strong>答：</strong>
+                抽象级别不同。机器指令是由一组二进制代码组成的。微指令是具有微地址的控制字。一系列微指令的有序集合构成微程序。在微程序控制逻辑法中，机器指令由微程序实现。格式不同。机器指令包括操作码和操作数地址字段，微指令根据编码法的不同有多种情况，一般包括微操作信息和下地址字段。
+            </p>
+        </div>
+
+        <h3 class="question">33、控制器有哪些几种控制方式？各自有什么特点？</h3>
+        <div class="answer">
+            <p><strong>答：</strong> 控制器的控制方式可以分为 3 种：同步控制方式、异步控制方式和联合控制方式。</p>
+            <ul>
+                <li><strong>同步控制方式</strong>的各项操作都由统一的时序信号控制，在每个机器周期中产生统一数目的节拍电位和工作脉冲。这种控制方式设计简单，容易实现；但是对于许多简单指令来说会有较多的空闲时间，造成较大的时间浪费，从而影响了指令的执行速度。
+                </li>
+                <li><strong>异步控制方式</strong>的各项操作不采用统一的时序信号控制，而根据指令或部件的具体情况决定，需要多少时间，就占用多少时间。异步控制方式没有时间上的浪费，因而提高了机器的效率，但是控制比较复杂。
+                </li>
+                <li><strong>联合控制方式</strong>是同步控制和异步控制相结合。</li>
+            </ul>
+        </div>
+
+        <h3 class="question">34、指令和数据都存放在主存，如何识别从主存储器中取出的是指令还是数据？</h3>
+        <div class="answer">
+            <p><strong>答：</strong> 指令和数据都存放在主存，它们都以二进制代码形式出现，区分的方法为：</p>
+            <ol>
+                <li>取指令或数据所处的机器周期不同：取指周期取出的是指令；分析、取数或执行周期取出的是数据。</li>
+                <li>取指令或数据时地址的来源不同：指令地址来源于程序计数器；数据地址来源于地址形成部件。</li>
+            </ol>
+        </div>
+
+        <h3 class="question">35、什么是微指令和微操作？微程序和机器指令有何关系？微程序和程序之间有何关系？</h3>
+        <div class="answer">
+            <p><strong>答：</strong></p>
+            <ul>
+                <li><strong>微指令</strong>是控制计算机各部件完成某个基本微操作的命令。</li>
+                <li><strong>微操作</strong>是指计算机中最基本的、不可再分解的操作。</li>
+                <li>微指令和微操作是一一对应的，微指令是微操作的控制信号，微操作是微指令的操作过程。微指令是若干个微命令的集合。</li>
+                <li><strong>微程序</strong>是机器指令的实时解释器，每一条机器指令都对应一个微程序。</li>
+                <li>微程序和程序是两个不同的概念。微程序是由微指令组成的，用于描述机器指令，实际上是机器指令的实时解释器，微程序是由计算机的设计者事先编制好并存放在控制存储器中的，一般不提供给用户；程序是由机器指令组成的，由程序员事先编制好并存放在主存放器中。
+                </li>
+            </ul>
+        </div>
+
+        <h3 class="question">36、比较水平微指令和垂直微指令的优缺点。</h3>
+        <div class="answer">
+            <p><strong>答：</strong></p>
+            <ol>
+                <li>水平型微指令并行操作能力强、效率高并且灵活性强，而垂直型微指令则较差。</li>
+                <li>水平型微指令执行一条指令的时间短，垂直型微指令执行时间长。</li>
+                <li>由水平型微指令解释指令的微程序，因而具有微指令字比较长，但微程序短的特点，而垂直型微指令则正好相反。</li>
+                <li>水平型微指令用户难以掌握，而垂直型微指令与指令相似，相对来说比较容易。</li>
+            </ol>
+        </div>
+
+    </div>
+    <h1>计算机组成原理复习题 (37-46)</h1>
+
+    <h3 class="question">37、比较单总线、双总线和多总线结构的性能特点。</h3>
+    <div class="answer">
+        <p><strong>答：</strong></p>
+        <ul>
+            <li>在<strong>单总线结构</strong>中，要求连接到总线上的逻辑部件必须高速运行，以便在某些设备需要使用总线时，能迅速获得总线控制权；而当不再使用总线时，能迅速放弃总线控制权。否则，由于一条总线由多种功能部件共用，可能导致很大的时间延迟。
+            </li>
+            <li>在<strong>双总线结构</strong>中，存在 2 种总线：存储总线，用于 CPU 与主存储器的信息交换；I/O 总线，用于外设与主机的信息交换。</li>
+            <li>在双总线结构的基础之上，为了使高速外设(如磁盘机)能高速度地与主存储器进行数据交换，在高速外设与主存储器之间可以增设直接存储器访问(DMA: Direct Memory Access)方式的高速 I/O
+                总线(DMA 总线)，从而形成<strong>多总线结构</strong>。</li>
+        </ul>
+    </div>
+
+    <h3 class="question">38、什么叫总线周期、时钟周期、指令周期？它们之间一般有什么关系？</h3>
+    <div class="answer">
+        <p><strong>答：</strong></p>
+        <ul>
+            <li><strong>时钟周期</strong>是系统工作的最小时间单位，它由计算机主频决定；</li>
+            <li><strong>总线周期</strong>指总线上两个设备进行一次信息传输所需要的时间（如 CPU 对存储器或 I/O 端口进行一次读/写操作所需要的时间）；</li>
+            <li><strong>指令周期</strong>指 CPU 执行一条指令所需要的时间。</li>
+        </ul>
+        <p>三者之间的关系是：时钟周期是基本动作单位；一个总线周期通常由 n 个时钟周期组成；而一个指令周期中可能包含有一个或几个总线周期，也可能一个总线周期都没有，这取决于该指令的功能。</p>
+    </div>
+
+    <h3 class="question">39、说明总线结构对计算机系统性能的影响。</h3>
+    <div class="answer">
+        <p><strong>答：</strong> 主要影响有以下三方面：</p>
+        <ol>
+            <li><strong>最大存储容量：</strong>
+                <ul>
+                    <li>单总线系统中，最大内存容量必须小于由计算机字长所决定的可能地址总线。</li>
+                    <li>双总线系统中，存储容量不会受到外围设备数量的影响。</li>
+                </ul>
+            </li>
+            <li><strong>指令系统：</strong>
+                <ul>
+                    <li>双总线系统，必须有专门的 I/O 指令系统。</li>
+                    <li>单总线系统，访问内存和 I/O 使用相同指令。</li>
+                </ul>
+            </li>
+            <li><strong>吞吐量：</strong> 总线数量越多，吞吐能力越大。</li>
+        </ol>
+    </div>
+
+    <h3 class="question">40、接口电路在系统结构中的作用是什么？</h3>
+    <div class="answer">
+        <p><strong>答：</strong> 外设接口（或叫作 I/O 接口）是主机和外设（控制器）之间的实体部件，是实现主机与外设之间信息交换所必不可少的硬件支持。</p>
+    </div>
+
+    <h3 class="question">41、接口电路应具备哪些基本功能？</h3>
+    <div class="answer">
+        <p><strong>答：</strong> 接口电路应具有的基本的功能：(1) 数据的暂存与缓冲； (2) 保存设备的工作状态； (3) 信息交换方式的控制； (4) 通信联络控制； (5) 外设的识别； (6)
+            数据格式的变换控制。</p>
+    </div>
+
+    <h3 class="question">42、外部设备在系统中如何编址，如何与主机连接？</h3>
+    <div class="answer">
+        <p><strong>答：</strong> 通常根据与存储器地址的关系，有两种编址方式。</p>
+        <ol>
+            <li><strong>统一编址：</strong> 指外设接口中的 I/O 寄存器和主存单元一样看待，将它们和主存单元组合在一起编排地址；或者说，将主存的一部分地址空间用作 I/O
+                地址空间。这样就可以用访问主存的指令去访问外设的某个寄存器，因而也就不需要专门的 I/O 指令，可以简化 CPU 的设计。</li>
+            <li><strong>单独编址：</strong> 为了更清楚地区别 I/O 操作和存储器操作，I/O 地址通常与存储地址分开独立编址。这样，在系统中就存在了另一种与存储地址无关的 I/O 地址，CPU
+                也必须具有专用输入输出操作的 I/O 指令和控制逻辑。</li>
+        </ol>
+    </div>
+
+    <h3 class="question">43、什么是 I/O 组织方式？有哪些几种 I/O 组织方式？各自的特点是什么？</h3>
+    <div class="answer">
+        <p><strong>答：</strong> I/O 组织是指计算机主机与外部设备之间的信息交换方式。</p>
+        <p>计算机主机与外设之间的信息交换方式有 5 种：程序查询式、中断式、DMA 式、通道式、外围处理机方式。</p>
+        <ul>
+            <li>从系统结构的观点看，前两种方式（程序查询、中断）是以 <strong>CPU 为中心的控制</strong>，都需要 CPU 执行程序进行 I/O 数据传送。</li>
+            <li>DMA 式和通道式这两种方式是以<strong>主存贮器为中心的控制</strong>，数据可以在主存和外设之间直接传送。</li>
+            <li>对于最后一种方式（外围处理机），则是用微型或小型计算机进行输入和输出控制。</li>
+        </ul>
+        <p><strong>具体比较：</strong></p>
+        <ul>
+            <li>程序查询和中断方式适用于数据传输率比较低的外设，而 DMA、通道和外围处理机使用于数据传输率比较高的外设。</li>
+            <li>程序查询式控制简单，但系统效率很低；</li>
+            <li>中断式通过服务程序完成数据交换，实现了主机与外设的并行性；</li>
+            <li>DMA 式通过硬件实现了数据传送，速度快，但只能控制同一类外设；</li>
+            <li>通道式采用执行通道程序实现对不同类型设备的控制和管理，并行性进一步提高；</li>
+            <li>外围处理机方式具有更大的灵活性和并行性。</li>
+        </ul>
+    </div>
+
+    <h3 class="question">44、查询方式和中断方式的主要异同点是什么？</h3>
+    <div class="answer">
+        <p><strong>答：</strong> 两种方式都是以 CPU 为中心的控制方式，都需要 CPU 执行程序来进行 I/O
+            数据传送。程序查询式控制简单，但系统效率很低，无法实现并行操作；中断式通过服务程序完成数据交换，实现了主机与外设的并行性。</p>
+    </div>
+
+    <h3 class="question">45、什么是中断？中断技术给计算机系统带来了什么作用？</h3>
+    <div class="answer">
+        <p><strong>答：</strong> <strong>中断</strong>是指这样—个过程：当计算机执行正常程序时，系统中出现某些异常情况或特殊请求，CPU 暂停正在执行的程序，而转去处理所发生的事件；CPU
+            处理完毕后，自动返回到原来被中断了的程序继续运行。</p>
+        <p><strong>中断的作用：</strong> (1) 主机与外部设备并行工作； (2) 实现实时处理； (3) 硬件故障处理； (4) 实现多道程序和分时操作。</p>
+    </div>
+
+    <h3 class="question">46、中断系统为什么要进行中断判优？何时进行中断判优？如何进行判优？</h3>
+    <div class="answer">
+        <p><strong>答：</strong> (1) 中断优先级的含义有两个方面： (A) 一是中断请求与 CPU 现行程序优先级的问题； (B) 另一含义是各中断源之间，谁更迫切的问题。</p>
+        <p>(2) 方法： (A) 软件； (B) 硬件：为了得到较高的效率，一般采用硬件判优方法。判优逻辑随着判优方案的不同可有不同的结构，其组成部分既可能在设备接口之中，也可能在 CPU 内部，也可能这两部分都有。其作用是决定
+            CPU 的响应并且找出最高优先请求者，如果确定接收这个请求的话，就由 CPU 发出中断响应信号 INTA。</p>
+        <p>(C) 软硬件结合。中断判优发生在中断过程的第二步，中断请求之后，中断响应之前。</p>
+    </div>
+
+    </div>
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>计算机组成原理 - 分析与计算题 (Part 3)</title>
+        <style>
+            body {
+                font-family: "Microsoft YaHei", "Heiti SC", sans-serif;
+                line-height: 1.6;
+                max-width: 900px;
+                margin: 0 auto;
+                padding: 20px;
+                color: #333;
+                background-color: #f9f9f9;
+            }
+
+            .container {
+                background-color: #fff;
+                padding: 40px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
+            }
+
+            h2 {
+                border-bottom: 2px solid #2c3e50;
+                padding-bottom: 15px;
+                color: #2c3e50;
+                margin-top: 30px;
+            }
+
+            h3 {
+                color: #2980b9;
+                margin-top: 20px;
+            }
+
+            .question-list {
+                list-style-type: none;
+                padding: 0;
+            }
+
+            .question-item {
+                margin-bottom: 35px;
+                border-bottom: 1px dashed #eee;
+                padding-bottom: 20px;
+            }
+
+            .question-item:last-child {
+                border-bottom: none;
+            }
+
+            .question-title {
+                font-weight: bold;
+                font-size: 1.1em;
+                margin-bottom: 12px;
+                color: #34495e;
+            }
+
+            .answer {
+                text-align: justify;
+                padding-left: 10px;
+            }
+
+            .binary-box {
+                font-family: "Consolas", "Monaco", monospace;
+                border: 1px solid #333;
+                padding: 5px 10px;
+                display: inline-block;
+                margin: 5px 0;
+                background-color: #f0f0f0;
+            }
+
+            .formula {
+                font-family: "Times New Roman", serif;
+                font-style: italic;
+                background-color: #fff8dc;
+                padding: 2px 5px;
+                border-radius: 3px;
+            }
+
+            /* 内存映射图模拟 */
+            .memory-map {
+                border: 2px solid #333;
+                width: 250px;
+                margin: 20px 0;
+                text-align: center;
+                font-size: 0.9em;
+            }
+
+            .map-block {
+                border-bottom: 1px solid #333;
+                padding: 10px;
+                position: relative;
+            }
+
+            .map-block:last-child {
+                border-bottom: none;
+            }
+
+            .addr-label-left {
+                position: absolute;
+                left: -60px;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 0.85em;
+                color: #666;
+                text-align: right;
+                width: 50px;
+            }
+
+            /* 表格样式 */
+            table {
+                border-collapse: collapse;
+                width: 100%;
+                margin-top: 10px;
+                font-size: 0.9em;
+            }
+
+            th,
+            td {
+                border: 1px solid #999;
+                padding: 8px;
+                text-align: center;
+            }
+
+            th {
+                background-color: #eee;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div class="container">
+            <h2>二、简答题 (续)</h2>
+            <ol class="question-list" start="47">
+                <li class="question-item">
+                    <div class="question-title">47、外部设备有哪些主要功能？可以分为哪些大类？各中有哪些典型设备？</div>
+                    <div class="answer">
+                        <p><strong>答：</strong>外部设备的主要功能有数据的输入、输出、成批存储以及对信息的加工处理等。</p>
+                        <p>外部设备可以分为五大类：输入输出设备、辅助存储器、终端设备、过程控制设备和脱机设备。</p>
+                        <p>其典型设备有键盘、打印机、磁盘、智能终端、数/模转换器和键盘-软盘数据站等。</p>
+                    </div>
+                </li>
+                <li class="question-item">
+                    <div class="question-title">48、磁表面存储器的特点有哪些？</div>
+                    <div class="answer">
+                        <p><strong>答：</strong>磁表面存储器有如下显著的特点：</p>
+                        <ol>
+                            <li>存储密度高，记录容量大，每位价格低；</li>
+                            <li>记录介质可以重复使用；</li>
+                            <li>记录信息可长时间保存而致丢失；</li>
+                            <li>非破坏性读出，读出时不需再生信息；</li>
+                            <li>存取速度较低，机械结构复杂，对工作环境要求较严。</li>
+                        </ol>
+                    </div>
+                </li>
+            </ol>
+
+            <h2>三、分析与计算题</h2>
+
+            <ol class="question-list">
+                <!-- 计算题 1 -->
+                <li class="question-item">
+                    <div class="question-title">1、设机器字长 32 位，定点表示，尾数 31 位，数符 1 位，问：<br>
+                        (1) 定点原码整数表示时，最大正数是多少？最大负数是多少？<br>
+                        (2) 定点原码小数表示时，最大正数是多少？最大负数是多少？</div>
+                    <div class="answer">
+                        <p><strong>答：</strong></p>
+                        <p>(1) 定点原码整数表示：</p>
+                        <p>最大正数：<span class="binary-box">0 111 111 111 111 111 111 111 111 111 111</span></p>
+                        <p>数值 = <span class="formula">(2<sup>31</sup> - 1)<sub>10</sub></span></p>
+                        <p>最大负数：<span class="binary-box">0 111 111 111 111 111 111 111 111 111 111</span>
+                            (注：此处题目图片中负数符号位应为1，但原图显示为0，通常原码负数符号位为1)</p>
+                        <p>数值 = <span class="formula">- (2<sup>31</sup> - 1)<sub>10</sub></span></p>
+
+                        <p>(2) 定点原码小数表示：</p>
+                        <p>最大正数 = <span class="formula">(1 - 2<sup>-31</sup>)<sub>10</sub></span></p>
+                        <p>最大负数 = <span class="formula">- (1 - 2<sup>-31</sup>)<sub>10</sub></span></p>
+                    </div>
+                </li>
+
+                <!-- 计算题 2 -->
+                <li class="question-item">
+                    <div class="question-title">2、现有 1024×1 的存储芯片，若用它组成容量为 16K×8 的存储器。试求：<br>
+                        (1) 实现该存储器所需的芯片数量？<br>
+                        (2) 若将这些芯片分装在若干个块板上，每块板的容量为 4K×8，该存储器所需的地址线总位数是多少？其中几位用于选板？几位用于选片？几位用作片内地址？</div>
+                    <div class="answer">
+                        <p><strong>答：</strong></p>
+                        <p>(1) 需 1024×1 的芯片 128 片。</p>
+                        <p>(2) 该存储器所需的地址线总位数是 14 位，其中 2 位用于选板，2 位用于选片，10 位用作片内地址。</p>
+                    </div>
+                </li>
+
+                <!-- 计算题 3 -->
+                <li class="question-item">
+                    <div class="question-title">3、设存储器容量为 32 位，字长 64 位，模块数 m=8，分别用顺序方式和交叉方式进行组织。若存储周期 T=200ns，数据总线宽度为 64
+                        位，总线传送周期为 50ns，则顺序存储器和交叉存储器带宽各是多少？</div>
+                    <div class="answer">
+                        <p><strong>答：</strong>顺序存储器和交叉存储器连续读出 m=8 个字的信息总量都是：</p>
+                        <p><span class="formula">q = 64 位 × 8 = 512 位</span></p>
+                        <p>顺序存储器和交叉存储器连续读出 8 个字所需的时间分别是：</p>
+                        <p><span class="formula">t2 = mT = 8 × 200ns = 1600ns = 16 × 10<sup>-7</sup> (S)</span></p>
+                        <p><span class="formula">t1 = T + (m-1)t = 200ns + 7 × 50ns = 550ns = 5.5 × 10<sup>-7</sup>
+                                (S)</span></p>
+                        <p>顺序存储器带宽 <span class="formula">W2 = q/t2 = 512 / (16 × 10<sup>-7</sup>) = 32 × 10<sup>7</sup>
+                                (位/S)</span></p>
+                        <p>交叉存储器带宽 <span class="formula">W1 = q/t1 = 512 / (5.5 × 10<sup>-7</sup>) = 73 × 10<sup>7</sup>
+                                (位/S)</span></p>
+                    </div>
+                </li>
+
+                <!-- 计算题 4 -->
+                <li class="question-item">
+                    <div class="question-title">4、CPU 的地址总线 16 根(A15~A0，A0 是低位)，双向数据总线 16 根(D15~D0)，控制总线中与主存有关的信号有
+                        !MREQ(允许访存，低电平有效)，R/!W(高电平读命令，低电平写命令)。主存地址空间分配如下：0~8191 为系统程序区，由 EPROM 芯片组成，从 8192 起一共 32K
+                        地址空间为用户程序区，最后(最大地址)4K 地址空间为系统程序工作区。如图 1 所示。上述地址为十进制，按字编址。现有如下芯片：<br>
+                        EPROM: 8K×16 位(控制端仅有 !CS)，16 位×8 位<br>
+                        SRAM: 16K×1 位，2K×8 位，4K×16 位，8K×16 位<br>
+                        请从上述芯片中选择芯片设计该计算机的主存储器，画出主存逻辑框图。</div>
+                    <div class="answer">
+                        <p><strong>图 1 地址分配情况：</strong></p>
+                        <div class="memory-map">
+                            <div class="map-block">
+                                <span class="addr-label-left">0</span>
+                                8K (EPROM)
+                                <span class="addr-label-left" style="top:auto; bottom:-10px;">8191</span>
+                            </div>
+                            <div class="map-block">
+                                <span class="addr-label-left">8192</span>
+                                32K (SRAM)
+                                <span class="addr-label-left" style="top:auto; bottom:-10px;">40960</span>
+                            </div>
+                            <div class="map-block" style="background-color: #fcfcfc; color: #999;">
+                                20K (空)
+                            </div>
+                            <div class="map-block">
+                                <span class="addr-label-left">61429</span>
+                                4K (SRAM)
+                                <span class="addr-label-left" style="top:auto; bottom:-10px;">65535</span>
+                            </div>
+                        </div>
+
+                        <p><strong>答：</strong>主存地址分布及芯片连接图如图 2 所示（注：此处用文字描述逻辑）。根据给定条件，选用 EPROM 8K×16 位芯片 1 片，SRAM 8K×16
+                            位芯片 4 片，4K×16 位芯片 1 片，3:8 译码器 1 片，与非门及反向器。</p>
+                        <ul>
+                            <li><strong>A<sub>12</sub>-A<sub>0</sub></strong> 进行片内译码</li>
+                            <li><strong>A<sub>15</sub>-A<sub>13</sub></strong> 进行片外译码（8 组）</li>
+                        </ul>
+                    </div>
+                </li>
+
+                <!-- 计算题 5 -->
+                <li class="question-item">
+                    <div class="question-title">5、某计算机指令字长 16 位，地址码是 6 位，指令有无地址、一地址和二地址 3 种格式，设有 N 条二地址指令，无地址指令 M 条，试问 1
+                        地址指令最多有多少条？</div>
+                    <div class="answer">
+                        <p><strong>解：</strong>设 1 地址指令有 X 条</p>
+                        <p><span class="formula">((2<sup>4</sup> - N) * 2<sup>6</sup> - X) * 2<sup>6</sup> = M</span>
+                        </p>
+                        <p>得：<span class="formula">X = (2<sup>4</sup> - N) * 2<sup>6</sup> - M * 2<sup>-6</sup></span>
+                        </p>
+                    </div>
+                </li>
+
+                <!-- 计算题 6 -->
+                <li class="question-item">
+                    <div class="question-title">6、假设某计算机指令长度为 20 位，具有双操作数、单操作数和无操作数 3 类指令格式，每个操作数地址规定用 6 位表示。
+                        问：若操作码字段固定为 8 位，现已设计出 m 条双操作数指令，n 条无操作数指令，在此情况下，这台计算机最多可以设计出多少条单操作数指令？</div>
+                    <div class="answer">
+                        <p><strong>答：</strong>由于设定全部指令采用 8 位固定的 OP 字段，故这台计算机最多的指令条数为 2<sup>8</sup> = 256 条。因此最多还可以设计出
+                            <strong>(256 - m - n)</strong> 条单操作数指令。</p>
+                    </div>
+                </li>
+
+                <!-- 计算题 7 -->
+                <li class="question-item">
+                    <div class="question-title">7、有 4 级流水线分别完成取指、指令译码并取数、运算、送结果 4 步操作，假设完成各步操作的时间依次为
+                        100ns、80ns、50ns。<br>
+                        (1) 流水线的操作周期应设计为多少？<br>
+                        (2) 若相邻 2 条指令发生数据相关，而且在硬件上不采取措施，那么第 2 条指令要推迟多少时间进行？<br>
+                        (3) 如果在硬件设计上加以改进，至少需推迟多少时间？</div>
+                    <div class="answer">
+                        <p><strong>解：</strong></p>
+                        <p>(1) 流水线的操作时钟周期 t 按四步操作中<strong>最长时间</strong>来考虑，所以 t = 100ns。</p>
+                        <p>(2) 两条指令发生数据相关冲突情况：<br>
+                            ADD R<sub>1</sub>, R<sub>2</sub>, R<sub>3</sub>; &nbsp;&nbsp;&nbsp;
+                            R<sub>2</sub>+R<sub>3</sub> -> R<sub>1</sub><br>
+                            SUB R<sub>4</sub>, R<sub>1</sub>, R<sub>5</sub>; &nbsp;&nbsp;&nbsp;
+                            R<sub>1</sub>-R<sub>5</sub> -> R<sub>4</sub></p>
+                        <p>两条指令在流水线中执行情况如表 6-4 所示：</p>
+
+                        <p><strong>表 6-4 指令在流水线上的执行情况</strong></p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>时钟<br>指令</th>
+                                    <th>1</th>
+                                    <th>2</th>
+                                    <th>3</th>
+                                    <th>4</th>
+                                    <th>5</th>
+                                    <th>6</th>
+                                    <th>7</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>ADD</td>
+                                    <td>取指</td>
+                                    <td>译码</td>
+                                    <td>运算</td>
+                                    <td>送结果</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>SUB</td>
+                                    <td></td>
+                                    <td>取指</td>
+                                    <td>译码</td>
+                                    <td>等待</td>
+                                    <td>等待</td>
+                                    <td>运算</td>
+                                    <td>送结果</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p><em>(注：SUB 指令在译码后需要等待 ADD 指令的“送结果”阶段完成，才能获取最新的 R1 值进行运算，因此发生推迟)</em></p>
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+    </body>
+
+    </html>
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>计算机组成原理 - 分析与计算题 (Part 4)</title>
+        <style>
+            body {
+                font-family: "Microsoft YaHei", "Heiti SC", sans-serif;
+                line-height: 1.6;
+                max-width: 900px;
+                margin: 0 auto;
+                padding: 20px;
+                color: #333;
+                background-color: #f9f9f9;
+            }
+
+            .container {
+                background-color: #fff;
+                padding: 40px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
+            }
+
+            h2 {
+                border-bottom: 2px solid #2c3e50;
+                padding-bottom: 15px;
+                color: #2c3e50;
+                margin-top: 30px;
+            }
+
+            .question-list {
+                list-style-type: none;
+                padding: 0;
+            }
+
+            .question-item {
+                margin-bottom: 35px;
+                border-bottom: 1px dashed #eee;
+                padding-bottom: 20px;
+            }
+
+            .question-item:last-child {
+                border-bottom: none;
+            }
+
+            .question-title {
+                font-weight: bold;
+                font-size: 1.1em;
+                margin-bottom: 12px;
+                color: #34495e;
+            }
+
+            .answer {
+                text-align: justify;
+                padding-left: 10px;
+            }
+
+            .formula {
+                font-family: "Times New Roman", serif;
+                font-style: italic;
+                background-color: #fff8dc;
+                padding: 2px 5px;
+                border-radius: 3px;
+            }
+
+            /* 流水线时空图样式 */
+            .pipeline-chart {
+                border-collapse: collapse;
+                font-size: 0.8em;
+                margin: 10px 0;
+                text-align: center;
+            }
+
+            .pipeline-chart td,
+            .pipeline-chart th {
+                width: 20px;
+                height: 20px;
+                border: 1px solid #ccc;
+                padding: 2px;
+            }
+
+            .pipeline-chart .axis-label {
+                border: none;
+                text-align: right;
+                padding-right: 5px;
+                font-weight: bold;
+            }
+
+            .pipeline-chart .active {
+                background-color: #3498db;
+                color: white;
+            }
+
+            /* 磁盘地址格式样式 */
+            .disk-address-box {
+                display: flex;
+                border: 1px solid #000;
+                margin: 10px 0;
+                width: fit-content;
+            }
+
+            .disk-field {
+                border-right: 1px solid #000;
+                padding: 5px 15px;
+                text-align: center;
+                position: relative;
+            }
+
+            .disk-field:last-child {
+                border-right: none;
+            }
+
+            .bit-label {
+                position: absolute;
+                top: -20px;
+                font-size: 0.8em;
+                color: #666;
+            }
+
+            .bit-label.left {
+                left: 0;
+            }
+
+            .bit-label.right {
+                right: 0;
+            }
+
+            .bit-label.center {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            ul.sub-questions {
+                list-style-type: none;
+                padding-left: 0;
+            }
+
+            ul.sub-questions li {
+                margin-bottom: 10px;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div class="container">
+            <h2>三、分析与计算题 (续)</h2>
+
+            <ol class="question-list" start="7">
+                <!-- 第7题补充说明 -->
+                <li class="question-item">
+                    <div class="question-title">7、(续) 关于数据相关的分析</div>
+                    <div class="answer">
+                        <p>ADD 指令在时钟 4 时将结果写入寄存器堆 (R<sub>1</sub>)，但 SUB 指令在时钟 3 时读寄存器堆 (R<sub>1</sub>)。本来 ADD 指令应先写入
+                            R<sub>1</sub>，SUB 指令后读 R<sub>1</sub>，结果变成 SUB 指令先读 R<sub>1</sub>，ADD 指令后写
+                            R<sub>1</sub>，因而发生了两条指令间数据相关。如果硬件上不采取措施，第 2 条指令 SUB 应至少推迟 2 个操作时钟周期 (2×100ns)。</p>
+                        <p>(3) 如果硬件上加以改进（采取旁路技术），可推迟 1 个操作时钟周期 (100ns)。</p>
+                    </div>
+                </li>
+
+                <!-- 第8题 -->
+                <li class="question-item">
+                    <div class="question-title">8、指令流水线由取指(IF)、译码(ID)、执行(EX)、访存(MEM)、写回寄存器堆(WB)五个过程段，共有 20
+                        条指令连续输入此流水线。<br>
+                        (1) 画出流水处理的时空图，假设时钟周期为 100ns。<br>
+                        (2) 求流水线的实际吞吐率 (单位时间里执行完毕的指令数)。</div>
+                    <div class="answer">
+                        <p><strong>解：</strong> (1) 时空图如下：</p>
+                        <table class="pipeline-chart">
+                            <tr>
+                                <td class="axis-label">WB</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="active">1</td>
+                                <td class="active">2</td>
+                                <td class="active">3</td>
+                                <td class="active">4</td>
+                                <td class="active">5</td>
+                                <td>...</td>
+                            </tr>
+                            <tr>
+                                <td class="axis-label">MEM</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="active">1</td>
+                                <td class="active">2</td>
+                                <td class="active">3</td>
+                                <td class="active">4</td>
+                                <td class="active">5</td>
+                                <td></td>
+                                <td>...</td>
+                            </tr>
+                            <tr>
+                                <td class="axis-label">EX</td>
+                                <td></td>
+                                <td></td>
+                                <td class="active">1</td>
+                                <td class="active">2</td>
+                                <td class="active">3</td>
+                                <td class="active">4</td>
+                                <td class="active">5</td>
+                                <td></td>
+                                <td></td>
+                                <td>...</td>
+                            </tr>
+                            <tr>
+                                <td class="axis-label">ID</td>
+                                <td></td>
+                                <td class="active">1</td>
+                                <td class="active">2</td>
+                                <td class="active">3</td>
+                                <td class="active">4</td>
+                                <td class="active">5</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>...</td>
+                            </tr>
+                            <tr>
+                                <td class="axis-label">IF</td>
+                                <td class="active">1</td>
+                                <td class="active">2</td>
+                                <td class="active">3</td>
+                                <td class="active">4</td>
+                                <td class="active">5</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>...</td>
+                            </tr>
+                            <tr>
+                                <td class="axis-label">时间T</td>
+                                <td>t<sub>1</sub></td>
+                                <td>t<sub>2</sub></td>
+                                <td>t<sub>3</sub></td>
+                                <td>t<sub>4</sub></td>
+                                <td>t<sub>5</sub></td>
+                                <td>t<sub>6</sub></td>
+                                <td>t<sub>7</sub></td>
+                                <td>t<sub>8</sub></td>
+                                <td>t<sub>9</sub></td>
+                                <td>...</td>
+                            </tr>
+                        </table>
+                        <br>
+                        <p><strong>(2) 实际吞吐率计算：</strong></p>
+                        <p><span class="formula">H = n / ( (K + n - 1)τ )</span></p>
+                        <p><span class="formula">= 20 / ( (5 + 20 - 1) * 100 * 10<sup>-9</sup> )</span></p>
+                        <p><span class="formula">= 8.33 * 10<sup>6</sup> 条/秒</span></p>
+                    </div>
+                </li>
+
+                <!-- 第9题 -->
+                <li class="question-item">
+                    <div class="question-title">9、某系统总线的一个存取周期最快为 3 个总线时钟周期，在一个总线周期中可以存取 32 位数据。若总线的时钟频率为
+                        8.33MHz，则总线的带宽为多少 MB/s？</div>
+                    <div class="answer">
+                        <p><strong>解：</strong>总线的带宽 = 数据宽度 × 总线周期的最高频率</p>
+                        <p><span class="formula">= (32/8) Byte × (8.33/3) M/s</span></p>
+                        <p><span class="formula">= 11.1 MB/s</span></p>
+                    </div>
+                </li>
+
+                <!-- 第10题 -->
+                <li class="question-item">
+                    <div class="question-title">10、某磁盘组有 6 片磁盘，每片可有 2 个记录面，存储区域内径为 22cm，外径为 33cm，道密度 40 道/cm，位密度
+                        400b/cm，转速 2400 r/min。试问：</div>
+                    <div class="answer">
+                        <ul class="sub-questions">
+                            <li>(1) 共有多少个存储面可用？<br>
+                                <strong>答：</strong> 6 × 2 = 12 (面)，共有 12 个存储面可用。
+                            </li>
+
+                            <li>(2) 共有多少个圆柱面？<br>
+                                <strong>答：</strong> 40 × (33 - 22) / 2 = 220 (道)，共有 220 个圆柱面。
+                            </li>
+
+                            <li>(3) 整个磁盘组的总存储总量是多少？<br>
+                                <strong>答：</strong> 12 × 22π × 400 × 220 ≈ 73 × 10<sup>6</sup> (位)。
+                            </li>
+
+                            <li>(4) 数据传送率是多少？<br>
+                                <strong>答：</strong> 数据传送率 = (22π × 400) / (60/2400) = 1.1 × 10<sup>6</sup> (b/s) = 0.138
+                                × 10<sup>6</sup> (B/s)。
+                            </li>
+
+                            <li>(5) 如果某文件长度超过一个磁盘的容量，应将它记录在同一存储面上还是记录在同一圆柱面上？为什么？<br>
+                                <strong>答：</strong> 记录在同一圆柱面上。因为这样安排存取速度快（切换磁头是电子切换，速度快；切换磁道需要机械移动，速度慢）。
+                            </li>
+
+                            <li>(6) 如果采用定长信息块记录格式，直接寻址的最小单位是什么？寻址命令中如何表示磁盘地址？<br>
+                                <strong>答：</strong> 直接寻址的最小单位是扇区。磁盘地址：驱动器号、圆柱面号、盘面号、扇区号。
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <!-- 第11题 -->
+                <li class="question-item">
+                    <div class="question-title">11、某磁盘存储器的转速为 3000r/min，共有 4 个记录面，5 道/mm，每道记录信息为 12288B，最小磁道直径为 230mm，共有
+                        275 道，问：<br>
+                        (1) 磁盘存储器的存储容量是多少？<br>
+                        (2) 最大位密度，最小位密度是多少？<br>
+                        (3) 磁盘数据传输率是多少？<br>
+                        (4) 平均等待时间是多少？<br>
+                        (5) 给出一个磁盘地址格式方案。</div>
+                    <div class="answer">
+                        <p><strong>答：</strong></p>
+                        <p>(1) 每道记录信息容量 = 12288 字节，每个记录面信息容量 = 275 × 12288 字节，共有 4 个记录面，所以磁盘存储器总容量为：</p>
+                        <p><span class="formula">4 × 275 × 12288 字节 = 13516800 字节</span></p>
+
+                        <p>(2) 最高位密度 D<sub>1</sub> 按最小磁道半径 R<sub>1</sub> 计算 (R<sub>1</sub> = 115mm)：</p>
+                        <p><span class="formula">D<sub>1</sub> = 12288 字节 / 2πR<sub>1</sub> = 17 字节/mm</span></p>
+                        <p>最低位密度 D<sub>2</sub> 按最大磁道半径 R<sub>2</sub> 计算：</p>
+                        <p><span class="formula">R<sub>2</sub> = R<sub>1</sub> + (275/5) = 115 + 55 = 170mm</span></p>
+                        <p><span class="formula">D<sub>2</sub> = 12288 字节 / 2πR<sub>2</sub> = 11.5 字节/mm</span></p>
+
+                        <p>(3) 磁盘数据传输率：</p>
+                        <p>r = 3000/60 = 50 周/秒</p>
+                        <p>N = 12288 字节 (每道信息容量)</p>
+                        <p><span class="formula">C = r × N = 50 × 12288 = 614400 字节/秒</span></p>
+
+                        <p>(4) 平均等待时间 = 1/2r = 1/2 × 50 = 1/100 秒 = 10 毫秒</p>
+
+                        <p>(5) 本地磁盘存储器假设只有一台。有 4 个记录面，每个记录面有 275 个磁道。假设每个扇区记录 1024 个字节，则需要 12288 字节 / 1024 字节 = 12
+                            个扇区。由此可得如图 9-29 的地址格式：</p>
+
+                        <div class="disk-address-box">
+                            <div class="disk-field">
+                                <span class="bit-label left">14</span>
+                                <span class="bit-label right">6</span>
+                                柱面 (磁道) 号
+                            </div>
+                            <div class="disk-field">
+                                <span class="bit-label left">5</span>
+                                <span class="bit-label right">4</span>
+                                盘面 (磁头) 号
+                            </div>
+                            <div class="disk-field">
+                                <span class="bit-label left">3</span>
+                                <span class="bit-label right">0</span>
+                                扇 区 号
+                            </div>
+                        </div>
+                        <div style="text-align:center; font-size:0.9em; color:#666;">图 9-29 地址格式</div>
+                    </div>
+                </li>
+
+                <!-- 第12题 -->
+                <li class="question-item">
+                    <div class="question-title">12、一台有 6 个盘片的磁盘组，转速为 2400r/min(每分钟转速)，盘面有效记录区域的外直径为 30cm，内直径为 20cm，记录密度为
+                        640b/m(每毫米的位数)，磁道间距为 0.2cm，盘片设有 2 个保护面，1 个伺服面。试计算：<br>
+                        (1) 盘组的存储容量。<br>
+                        (2) 数据传输率。</div>
+                    <div class="answer">
+                        <p><strong>解：</strong> (注意，需要统一单位)</p>
+                        <p>(1) 盘组的存储容量：</p>
+                        <p><span class="formula">(2*6-3) * (30-20)/2 /0.2 * (2*20/2*PI*640)</span></p>
+                        <p><em>(注：2*6-3 表示 12 个面减去 2 个保护面和 1 个伺服面，剩 9 个数据面；(30-20)/2 /0.2 计算磁道数；2*20/2*PI*640
+                                计算最内圈磁道的容量)</em></p>
+
+                        <p>(2) 数据传输率：</p>
+                        <p><span class="formula">(2*20/2*PI*640) * 2400/60</span></p>
+                    </div>
+                </li>
+
+                <!-- 第13题 -->
+                <li class="question-item">
+                    <div class="question-title">13、设有两个浮点数 x=2<sup>Ex</sup> × S<sub>x</sub>，y=2<sup>Ey</sup> ×
+                        S<sub>y</sub>，E<sub>x</sub>=(-10)<sub>2</sub>，S<sub>x</sub>=(+0.1001)<sub>2</sub>，E<sub>y</sub>=(+10)<sub>2</sub>...
+                    </div>
+                    <div class="answer">
+                        <p><em>(注：题目图片内容在此截止，未提供后续参数或计算要求。)</em></p>
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+    </body>
+
+    </html>

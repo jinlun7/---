@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计算机组成原理 - 分析计算题精解</title>
+
+<style>
+    body { font-family: "Segoe UI", "Microsoft YaHei", sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; background-color: #f9f9f9; }
+    .container { background-color: #fff; padding: 40px; box-shadow: 0 0 10px rgba(0,0,0,0.1); border-radius: 8px; }
+    h1 { text-align: center; color: #2c3e50; border-bottom: 2px solid #2c3e50; padding-bottom: 10px; }
+    h2 { color: #2980b9; border-left: 5px solid #2980b9; padding-left: 10px; margin-top: 40px; background: #eaf2f8; padding: 10px; }
+    .question-block { margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px dashed #eee; }
+    .question-title { font-weight: bold; font-size: 1.1em; margin-bottom: 10px; }
+    .options { list-style-type: none; padding-left: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .answer-key { color: #e74c3c; font-weight: bold; margin-top: 10px; display: block; }
+    .analysis { background-color: #fffbf0; border: 1px solid #ffeeba; padding: 15px; margin-top: 10px; border-radius: 5px; color: #856404; }
+    .knowledge-box { background-color: #d4edda; border: 1px solid #c3e6cb; color: #155724; padding: 15px; margin-top: 30px; border-radius: 5px; }
+    .knowledge-box h3 { margin-top: 0; border-bottom: 1px solid #155724; padding-bottom: 5px; display: inline-block; }
+    .formula { font-style: italic; background: #eee; padding: 2px 5px; }
+    .binary-box { font-family: monospace; background: #eee; padding: 2px 5px; }
+    /* Table styles for analysis questions */
+    table { border-collapse: collapse; width: 100%; margin: 10px 0; }
+    th, td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+    th { background-color: #f2f2f2; }
+    /* Pipeline chart */
+    .pipeline-chart td, .pipeline-chart th { width: 20px; height: 20px; padding: 2px; font-size: 0.8em; }
+    .pipeline-chart .active { background-color: #3498db; color: white; }
+    .disk-address-box { display: flex; border: 1px solid #000; width: fit-content; margin: 10px 0; }
+    .disk-field { border-right: 1px solid #000; padding: 5px 15px; position: relative; text-align: center; }
+    .bit-label { position: absolute; top: -20px; font-size: 0.8em; color: #666; }
+    .bit-label.left { left: 0; }
+    .bit-label.right { right: 0; }
+</style>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <h1>计算机组成原理 - 分析计算题精解</h1>
+<h2>第一章：计算机系统概论</h2>
+<div class="question-block">
+<div class="question-title">7、(续) 关于数据相关的分析</div>
+<div class="answer-section"><p>ADD 指令在时钟 4 时将结果写入寄存器堆 (R<sub>1</sub>)，但 SUB 指令在时钟 3 时读寄存器堆 (R<sub>1</sub>)。本来 ADD 指令应先写入
+                            R<sub>1</sub>，SUB 指令后读 R<sub>1</sub>，结果变成 SUB 指令先读 R<sub>1</sub>，ADD 指令后写
+                            R<sub>1</sub>，因而发生了两条指令间数据相关。如果硬件上不采取措施，第 2 条指令 SUB 应至少推迟 2 个操作时钟周期 (2×100ns)。</p>
+<p>(3) 如果硬件上加以改进（采取旁路技术），可推迟 1 个操作时钟周期 (100ns)。</p></div>
+</div>
+<div class="knowledge-box">
+<h3>本章核心考点</h3>
+<ul>
+<li>冯·诺依曼机特点：存储程序、顺序执行、二进制。</li>
+<li>计算机系统层次：硬件 -> 微程序 -> 机器语言 -> 操作系统 -> 汇编 -> 高级语言。</li>
+<li>性能指标：主频、字长、CPI、MIPS、带宽、响应时间。</li>
+<li>硬件五大部件：运算器、控制器、存储器、输入、输出。</li>
+</ul>
+</div>
+<h2>第二章：数据的表示和运算</h2>
+<div class="question-block">
+<div class="question-title">1、设机器字长 32 位，定点表示，尾数 31 位，数符 1 位，问：<br/>
+                        (1) 定点原码整数表示时，最大正数是多少？最大负数是多少？<br/>
+                        (2) 定点原码小数表示时，最大正数是多少？最大负数是多少？</div>
+<div class="answer-section"><p><strong>答：</strong></p>
+<p>(1) 定点原码整数表示：</p>
+<p>最大正数：<span class="binary-box">0 111 111 111 111 111 111 111 111 111 111</span></p>
+<p>数值 = <span class="formula">(2<sup>31</sup> - 1)<sub>10</sub></span></p>
+<p>最大负数：<span class="binary-box">1 111 111 111 111 111 111 111 111 111 111</span>
+                            (注：此处题目图片中负数符号位应为1，通常原码负数符号位为1)</p>
+<p>数值 = <span class="formula">- (2<sup>31</sup> - 1)<sub>10</sub></span></p>
+<p>(2) 定点原码小数表示：</p>
+<p>最大正数 = <span class="formula">(1 - 2<sup>-31</sup>)<sub>10</sub></span></p>
+<p>最大负数 = <span class="formula">- (1 - 2<sup>-31</sup>)<sub>10</sub></span></p></div>
+</div>
+<div class="question-block">
+<div class="question-title">13、设有两个浮点数 x=2<sup>Ex</sup> × S<sub>x</sub>，y=2<sup>Ey</sup> ×
+                        S<sub>y</sub>，E<sub>x</sub>=(-10)<sub>2</sub>，S<sub>x</sub>=(+0.1001)<sub>2</sub>，E<sub>y</sub>=(+10)<sub>2</sub>...</div>
+<div class="answer-section"><p><em>(注：题目图片内容在此截止，未提供后续参数或计算要求。)</em></p></div>
+</div>
+<div class="knowledge-box">
+<h3>本章核心考点</h3>
+<ul>
+<li>原码/反码/补码/移码定义及转换。</li>
+<li>补码运算：将减法变加法，符号位参与运算。</li>
+<li>定点数 vs 浮点数：范围与精度的权衡。</li>
+<li>校验码：奇偶校验、海明码（纠错）、CRC（检错）。</li>
+<li>溢出判断：双符号位法、进位判别法。</li>
+</ul>
+</div>
+<h2>第三章：存储器系统</h2>
+<div class="question-block">
+<div class="question-title">2、现有 1024×1 的存储芯片，若用它组成容量为 16K×8 的存储器。试求：<br/>
+                        (1) 实现该存储器所需的芯片数量？<br/>
+                        (2) 若将这些芯片分装在若干个块板上，每块板的容量为 4K×8，该存储器所需的地址线总位数是多少？其中几位用于选板？几位用于选片？几位用作片内地址？</div>
+<div class="answer-section"><p><strong>答：</strong></p>
+<p>(1) 芯片数量 = (16K * 8) / (1024 * 1) = (16 * 1024 * 8) / 1024 = 128 片。</p>
+<p>(2) 总容量 16K = 2^14，故地址线 14 位。</p>
+<ul>
+<li>片内地址：芯片 1024 = 2^10，需 10 位 (A0-A9)。</li>
+<li>板选/片选：剩余 14 - 10 = 4 位。</li>
+<li>每块板 4K = 2^12，即每板包含 4K/1K = 4组芯片。总共 16K/4K = 4 块板。</li>
+<li>选板：需 2 位 (2^2=4)。</li>
+<li>选片（组）：每板内有4组，需 2 位。</li>
+</ul>
+<p>综上：14位地址线。2位选板，2位选片，10位片内。</p></div>
+</div>
+<div class="question-block">
+<div class="question-title">4、CPU 的地址总线 16 根(A15~A0，A0 是低位)，双向数据总线 16 根(D15~D0)，控制总线中与主存有关的信号有
+                        !MREQ(允许访存，低电平有效)，R/!W(高电平读命令，低电平写命令)。主存地址空间分配如下：0~8191 为系统程序区，由 EPROM 芯片组成，从 8192 起一共 32K
+                        地址空间为用户程序区，最后(最大地址)4K 地址空间为系统程序工作区。如图 1 所示。上述地址为十进制，按字编址。现有如下芯片：<br/>
+                        EPROM: 8K×16 位(控制端仅有 !CS)，16 位×8 位<br/>
+                        SRAM: 16K×1 位，2K×8 位，4K×16 位，8K×16 位<br/>
+                        请从上述芯片中选择芯片设计该计算机的主存储器，画出主存逻辑框图。</div>
+<div class="answer-section"><p><strong>图 1 地址分配情况：</strong></p>
+<div class="memory-map">
+<div class="map-block">
+<span class="addr-label-left">0</span>
+                                8K (EPROM)
+                                <span class="addr-label-left" style="top:auto; bottom:-10px;">8191</span>
+</div>
+<div class="map-block">
+<span class="addr-label-left">8192</span>
+                                32K (SRAM)
+                                <span class="addr-label-left" style="top:auto; bottom:-10px;">40960</span>
+</div>
+<div class="map-block" style="background-color: #fcfcfc; color: #999;">
+                                20K (空)
+                            </div>
+<div class="map-block">
+<span class="addr-label-left">61429</span>
+                                4K (SRAM)
+                                <span class="addr-label-left" style="top:auto; bottom:-10px;">65535</span>
+</div>
+</div>
+<p><strong>分析：</strong></p>
+<ul>
+<li>0-8K: EPROM, 8Kx16。选用1片 8Kx16 EPROM。</li>
+<li>8K-40K: 32K RAM。选用2片 16Kx1 无效（需x16），选用4片 8Kx16 SRAM。</li>
+<li>60K-64K: 4K RAM。选用1片 4Kx16 SRAM。</li>
+</ul></div>
+</div>
+<div class="question-block">
+<div class="question-title">11、某磁盘存储器的转速为 3000r/min，共有 4 个记录面，5 道/mm，每道记录信息为 12288B，最小磁道直径为 230mm，共有
+                        275 道，问：<br/>
+                        (1) 磁盘存储器的存储容量是多少？<br/>
+                        (2) 最大位密度，最小位密度是多少？<br/>
+                        (3) 磁盘数据传输率是多少？<br/>
+                        (4) 平均等待时间是多少？<br/>
+                        (5) 给出一个磁盘地址格式方案。</div>
+<div class="answer-section"><p><strong>答：</strong></p>
+<p>(1) 每道记录信息容量 = 12288 字节，每个记录面信息容量 = 275 × 12288 字节，共有 4 个记录面，所以磁盘存储器总容量为：</p>
+<p><span class="formula">4 × 275 × 12288 字节 = 13,516,800 字节</span></p>
+<p>(2) 最高位密度 D<sub>1</sub> 按最小磁道半径 R<sub>1</sub> 计算 (R<sub>1</sub> = 115mm)：</p>
+<p><span class="formula">D<sub>1</sub> = 12288 字节 / 2πR<sub>1</sub> = 17 字节/mm</span></p>
+<p>最低位密度 D<sub>2</sub> 按最大磁道半径 R<sub>2</sub> 计算：</p>
+<p><span class="formula">R<sub>2</sub> = R<sub>1</sub> + (275/5) = 115 + 55 = 170mm</span></p>
+<p><span class="formula">D<sub>2</sub> = 12288 字节 / 2πR<sub>2</sub> = 11.5 字节/mm</span></p>
+<p>(3) 磁盘数据传输率：</p>
+<p>r = 3000/60 = 50 周/秒</p>
+<p>N = 12288 字节 (每道信息容量)</p>
+<p><span class="formula">C = r × N = 50 × 12288 = 614400 字节/秒</span></p>
+<p>(4) 平均等待时间 = 1/2r = 1/2 × 50 = 1/100 秒 = 10 毫秒</p>
+<p>(5) 本地磁盘存储器假设只有一台。有 4 个记录面，每个记录面有 275 个磁道。假设每个扇区记录 1024 个字节，则需要 12288 字节 / 1024 字节 = 12
+                            个扇区。由此可得如图 9-29 的地址格式：</p>
+<div class="disk-address-box">
+<div class="disk-field">
+<span class="bit-label left">14</span>
+<span class="bit-label right">6</span>
+                                柱面 (磁道) 号
+                            </div>
+<div class="disk-field">
+<span class="bit-label left">5</span>
+<span class="bit-label right">4</span>
+                                盘面 (磁头) 号
+                            </div>
+<div class="disk-field">
+<span class="bit-label left">3</span>
+<span class="bit-label right">0</span>
+                                扇 区 号
+                            </div>
+</div>
+<div style="text-align:center; font-size:0.9em; color:#666;">图 9-29 地址格式</div></div>
+</div>
+<div class="knowledge-box">
+<h3>本章核心考点</h3>
+<ul>
+<li>存储层次：Cache - 主存 - 辅存。</li>
+<li>SRAM vs DRAM：速度、刷新、集成度。</li>
+<li>存储扩展：位扩展（数据线）、字扩展（地址线）。</li>
+<li>Cache原理：局部性原理，映射方式（直接、全相联、组相联）。</li>
+<li>存储器性能：存取时间 vs 存取周期。</li>
+</ul>
+</div>
+<h2>第四章：指令系统</h2>
+<div class="question-block">
+<div class="question-title">5、某计算机指令字长 16 位，地址码是 6 位，指令有无地址、一地址和二地址 3 种格式，设有 N 条二地址指令，无地址指令 M 条，试问 1
+                        地址指令最多有多少条？</div>
+<div class="answer-section"><p><strong>解：</strong>设 1 地址指令有 X 条</p>
+<p><span class="formula">((2<sup>4</sup> - N) * 2<sup>6</sup> - X) * 2<sup>6</sup> = M</span>
+</p>
+<p>得：<span class="formula">X = (2<sup>4</sup> - N) * 2<sup>6</sup> - M * 2<sup>-6</sup></span>
+</p></div>
+</div>
+<div class="question-block">
+<div class="question-title">6、假设某计算机指令长度为 20 位，具有双操作数、单操作数和无操作数 3 类指令格式，每个操作数地址规定用 6 位表示。
+                        问：若操作码字段固定为 8 位，现已设计出 m 条双操作数指令，n 条无操作数指令，在此情况下，这台计算机最多可以设计出多少条单操作数指令？</div>
+<div class="answer-section"><p><strong>答：</strong>由于设定全部指令采用 8 位固定的 OP 字段，故这台计算机最多的指令条数为 2<sup>8</sup> = 256 条。因此最多还可以设计出
+                            <strong>(256 - m - n)</strong> 条单操作数指令。</p></div>
+</div>
+<div class="question-block">
+<div class="question-title">10、某磁盘组有 6 片磁盘，每片可有 2 个记录面，存储区域内径为 22cm，外径为 33cm，道密度 40 道/cm，位密度
+                        400b/cm，转速 2400 r/min。试问：</div>
+<div class="answer-section"><ul class="sub-questions">
+<li>(1) 共有多少个存储面可用？<br/>
+<strong>答：</strong> 6 × 2 = 12 (面)，共有 12 个存储面可用。
+                            </li>
+<li>(2) 共有多少个圆柱面？<br/>
+<strong>答：</strong> 40 × (33 - 22) / 2 = 220 (道)，共有 220 个圆柱面。
+                            </li>
+<li>(3) 整个磁盘组的总存储总量是多少？<br/>
+<strong>答：</strong> 12 × 22π × 400 × 220 ≈ 73 × 10<sup>6</sup> (位)。
+                            </li>
+<li>(4) 数据传送率是多少？<br/>
+<strong>答：</strong> 数据传送率 = (22π × 400) / (60/2400) = 1.1 × 10<sup>6</sup> (b/s) = 0.138
+                                × 10<sup>6</sup> (B/s)。
+                            </li>
+<li>(5) 如果某文件长度超过一个磁盘的容量，应将它记录在同一存储面上还是记录在同一圆柱面上？为什么？<br/>
+<strong>答：</strong> 记录在同一圆柱面上。因为这样安排存取速度快（切换磁头是电子切换，速度快；切换磁道需要机械移动，速度慢）。
+                            </li>
+<li>(6) 如果采用定长信息块记录格式，直接寻址的最小单位是什么？寻址命令中如何表示磁盘地址？<br/>
+<strong>答：</strong> 直接寻址的最小单位是扇区。磁盘地址：驱动器号、圆柱面号、盘面号、扇区号。
+                            </li>
+</ul></div>
+</div>
+<div class="knowledge-box">
+<h3>本章核心考点</h3>
+<ul>
+<li>指令格式：操作码 + 地址码。</li>
+<li>寻址方式：立即、寄存器、直接、间接、基址（OS用）、变址（循环用）、相对（跳转用）。</li>
+<li>CISC vs RISC：复杂 vs 精简。</li>
+<li>堆栈操作：先进后出，支持子程序嵌套。</li>
+</ul>
+</div>
+<h2>第五章：中央处理器</h2>
+<div class="question-block">
+<div class="question-title">7、有 4 级流水线分别完成取指、指令译码并取数、运算、送结果 4 步操作，假设完成各步操作的时间依次为
+                        100ns、80ns、50ns。<br/>
+                        (1) 流水线的操作周期应设计为多少？<br/>
+                        (2) 若相邻 2 条指令发生数据相关，而且在硬件上不采取措施，那么第 2 条指令要推迟多少时间进行？<br/>
+                        (3) 如果在硬件设计上加以改进，至少需推迟多少时间？</div>
+<div class="answer-section"><p><strong>解：</strong></p>
+<p>(1) 流水线的操作时钟周期 t 按四步操作中<strong>最长时间</strong>来考虑，所以 t = 100ns。</p>
+<p>(2) 两条指令发生数据相关冲突情况：<br/>
+                            ADD R<sub>1</sub>, R<sub>2</sub>, R<sub>3</sub>;    
+                            R<sub>2</sub>+R<sub>3</sub> -&gt; R<sub>1</sub><br/>
+                            SUB R<sub>4</sub>, R<sub>1</sub>, R<sub>5</sub>;    
+                            R<sub>1</sub>-R<sub>5</sub> -&gt; R<sub>4</sub></p>
+<p>两条指令在流水线中执行情况如表 6-4 所示：</p>
+<p><strong>表 6-4 指令在流水线上的执行情况</strong></p>
+<table>
+<thead>
+<tr>
+<th>时钟<br/>指令</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ADD</td>
+<td>取指</td>
+<td>译码</td>
+<td>运算</td>
+<td>送结果</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>SUB</td>
+<td></td>
+<td>取指</td>
+<td>译码</td>
+<td>等待</td>
+<td>等待</td>
+<td>运算</td>
+<td>送结果</td>
+</tr>
+</tbody>
+</table>
+<p><em>(注：SUB 指令在译码后需要等待 ADD 指令的“送结果”阶段完成，才能获取最新的 R1 值进行运算，因此发生推迟)</em></p></div>
+</div>
+<div class="knowledge-box">
+<h3>本章核心考点</h3>
+<ul>
+<li>CPU功能：指令控制、操作控制、时间控制、数据加工。</li>
+<li>控制方式：同步、异步。</li>
+<li>微程序控制：微指令解释机器指令，存储在CM中。</li>
+<li>流水线技术：提高吞吐率，需解决相关性（数据、结构、控制冲突）。</li>
+</ul>
+</div>
+<h2>第六章：总线系统</h2>
+<div class="question-block">
+<div class="question-title">3、设存储器容量为 32 位，字长 64 位，模块数 m=8，分别用顺序方式和交叉方式进行组织。若存储周期 T=200ns，数据总线宽度为 64
+                        位，总线传送周期为 50ns，则顺序存储器和交叉存储器带宽各是多少？</div>
+<div class="answer-section"><p><strong>答：</strong>顺序存储器和交叉存储器连续读出 m=8 个字的信息总量都是：</p>
+<p><span class="formula">q = 64 位 × 8 = 512 位</span></p>
+<p>顺序存储器和交叉存储器连续读出 8 个字所需的时间分别是：</p>
+<p><span class="formula">t2 = mT = 8 × 200ns = 1600ns = 16 × 10<sup>-7</sup> (S)</span></p>
+<p><span class="formula">t1 = T + (m-1)t = 200ns + 7 × 50ns = 550ns = 5.5 × 10<sup>-7</sup>
+                                (S)</span></p>
+<p>顺序存储器带宽 <span class="formula">W2 = q/t2 = 512 / (16 × 10<sup>-7</sup>) = 32 × 10<sup>7</sup>
+                                (位/S)</span></p>
+<p>交叉存储器带宽 <span class="formula">W1 = q/t1 = 512 / (5.5 × 10<sup>-7</sup>) = 73 × 10<sup>7</sup>
+                                (位/S)</span></p></div>
+</div>
+<div class="question-block">
+<div class="question-title">9、某系统总线的一个存取周期最快为 3 个总线时钟周期，在一个总线周期中可以存取 32 位数据。若总线的时钟频率为
+                        8.33MHz，则总线的带宽为多少 MB/s？</div>
+<div class="answer-section"><p><strong>解：</strong>总线的带宽 = 数据宽度 × 总线周期的最高频率</p>
+<p><span class="formula">= (32/8) Byte × (8.33/3) M/s</span></p>
+<p><span class="formula">= 11.1 MB/s</span></p></div>
+</div>
+<div class="question-block">
+<div class="question-title">12、一台有 6 个盘片的磁盘组，转速为 2400r/min(每分钟转速)，盘面有效记录区域的外直径为 30cm，内直径为 20cm，记录密度为
+                        640b/m(每毫米的位数)，磁道间距为 0.2cm，盘片设有 2 个保护面，1 个伺服面。试计算：<br/>
+                        (1) 盘组的存储容量。<br/>
+                        (2) 数据传输率。</div>
+<div class="answer-section"><p><strong>解：</strong> (注意，需要统一单位)</p>
+<p>(1) 盘组的存储容量：</p>
+<p><span class="formula">(2*6-3) * (30-20)/2 /0.2 * (2*20/2*PI*640)</span></p>
+<p><em>(注：2*6-3 表示 12 个面减去 2 个保护面和 1 个伺服面，剩 9 个数据面；(30-20)/2 /0.2 计算磁道数；2*20/2*PI*640
+                                计算最内圈磁道的容量)</em></p>
+<p>(2) 数据传输率：</p>
+<p><span class="formula">(2*20/2*PI*640) * 2400/60</span></p></div>
+</div>
+<div class="knowledge-box">
+<h3>本章核心考点</h3>
+<ul>
+<li>总线分类：片内、系统、I/O。</li>
+<li>总线仲裁：集中式（链式、计数器、独立请求） vs 分布式。</li>
+<li>总线带宽计算：频率 × 宽度 / 8。</li>
+<li>总线操作阶段：申请、寻址、传输、结束。</li>
+</ul>
+</div>
+<h2>第七章：输入输出系统</h2>
+<div class="question-block">
+<div class="question-title">8、指令流水线由取指(IF)、译码(ID)、执行(EX)、访存(MEM)、写回寄存器堆(WB)五个过程段，共有 20
+                        条指令连续输入此流水线。<br/>
+                        (1) 画出流水处理的时空图，假设时钟周期为 100ns。<br/>
+                        (2) 求流水线的实际吞吐率 (单位时间里执行完毕的指令数)。</div>
+<div class="answer-section"><p><strong>解：</strong> (1) 时空图如下：</p>
+<table class="pipeline-chart">
+<tr>
+<td class="axis-label">WB</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="active">1</td>
+<td class="active">2</td>
+<td class="active">3</td>
+<td class="active">4</td>
+<td class="active">5</td>
+<td>...</td>
+</tr>
+<tr>
+<td class="axis-label">MEM</td>
+<td></td>
+<td></td>
+<td></td>
+<td class="active">1</td>
+<td class="active">2</td>
+<td class="active">3</td>
+<td class="active">4</td>
+<td class="active">5</td>
+<td></td>
+<td>...</td>
+</tr>
+<tr>
+<td class="axis-label">EX</td>
+<td></td>
+<td></td>
+<td class="active">1</td>
+<td class="active">2</td>
+<td class="active">3</td>
+<td class="active">4</td>
+<td class="active">5</td>
+<td></td>
+<td></td>
+<td>...</td>
+</tr>
+<tr>
+<td class="axis-label">ID</td>
+<td></td>
+<td class="active">1</td>
+<td class="active">2</td>
+<td class="active">3</td>
+<td class="active">4</td>
+<td class="active">5</td>
+<td></td>
+<td></td>
+<td></td>
+<td>...</td>
+</tr>
+<tr>
+<td class="axis-label">IF</td>
+<td class="active">1</td>
+<td class="active">2</td>
+<td class="active">3</td>
+<td class="active">4</td>
+<td class="active">5</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>...</td>
+</tr>
+<tr>
+<td class="axis-label">时间T</td>
+<td>t<sub>1</sub></td>
+<td>t<sub>2</sub></td>
+<td>t<sub>3</sub></td>
+<td>t<sub>4</sub></td>
+<td>t<sub>5</sub></td>
+<td>t<sub>6</sub></td>
+<td>t<sub>7</sub></td>
+<td>t<sub>8</sub></td>
+<td>t<sub>9</sub></td>
+<td>...</td>
+</tr>
+</table>
+<br/>
+<p><strong>(2) 实际吞吐率计算：</strong></p>
+<p><span class="formula">H = n / ( (K + n - 1)τ )</span></p>
+<p><span class="formula">= 20 / ( (5 + 20 - 1) * 100 * 10<sup>-9</sup> )</span></p>
+<p><span class="formula">= 8.33 * 10<sup>6</sup> 条/秒</span></p></div>
+</div>
+<div class="knowledge-box">
+<h3>本章核心考点</h3>
+<ul>
+<li>I/O控制方式：程序查询（串行）、中断（并行）、DMA（高速块传输）、通道。</li>
+<li>中断过程：请求 -> 响应（中断隐指令）-> 服务 -> 返回。</li>
+<li>DMA特点：窃取总线周期，CPU仅干预开始结束。</li>
+<li>接口功能：缓冲、转换、控制、状态。</li>
+</ul>
+</div>
+
+    </div>
+</body>
+</html>
